@@ -21,12 +21,14 @@ En interaktiv webapp for å øve japanske setninger, bygget med Astro og TypeScr
 ## 📚 Kategorier
 
 Hver kategori inneholder 10 setninger med:
+
 - **Furigana** (lesehjelp over kanji)
 - **Romaji** (latinsk transkripsjon)
 - **Interaktive tooltips** med forklaringer
 - **Smart svar-sjekk** med Levenshtein-avstand
 
 ### Tilgjengelige kategorier:
+
 - 🚆 **Tog** (電車) - 10 setninger om tog og transport
 - 👤 **Meg selv** (自己紹介) - 10 setninger for å presentere deg selv
 - ⏰ **Daglige rutiner** (日常) - 10 setninger om daglige aktiviteter
@@ -88,7 +90,7 @@ npm run preview
 2. Importer filen i `src/pages/index.astro`:
 
 ```typescript
-import nyKategori from '../data/ny-kategori.json';
+import nyKategori from "../data/ny-kategori.json";
 const categories = [togData, megSelvData, nyKategori];
 ```
 
