@@ -1,0 +1,133 @@
+{
+  "category": "italia",
+  "categoryName": "Italia",
+  "categoryNameJapanese": "イタリア",
+  "emoji": "🇮🇹",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "", "kanji": "イタリア", "romaji": "itaria", "tooltip": "Italia"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[til/i]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "いきました", "kanji": "行きました", "romaji": "ikimashita", "tooltip": "gikk/dro", "translations": ["jeg dro til italia", "jeg reiste til italia"]},
+            {"furigana": "りょこう", "kanji": "旅行", "romaji": "ryokou", "tooltip": "reise", "extra": [{"furigana": "しました", "kanji": "しました", "romaji": "shimashita", "tooltip": "gjorde"}], "translations": ["jeg reiste til italia", "jeg dro på tur til italia"]},
+            {"furigana": "ひこうき", "kanji": "飛行機", "romaji": "hikouki", "tooltip": "fly", "extra": [{"furigana": "で", "kanji": "で", "romaji": "de", "tooltip": "[med]", "isParticle": true}, {"furigana": "いきました", "kanji": "行きました", "romaji": "ikimashita", "tooltip": "gikk"}], "translations": ["jeg fløy til italia", "jeg dro til italia med fly"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {"furigana": "", "kanji": "イタリア", "romaji": "itaria", "tooltip": "Italia"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "すばらしい", "kanji": "素晴らしい", "romaji": "subarashii", "tooltip": "fantastisk", "translations": ["italia er et fantastisk land", "italia er flott"]},
+            {"furigana": "うつくしい", "kanji": "美しい", "romaji": "utsukushii", "tooltip": "vakker", "translations": ["italia er et vakkert land"]},
+            {"furigana": "すてき", "kanji": "素敵", "romaji": "suteki", "tooltip": "herlig", "translations": ["italia er et herlig land", "italia er flott"]}
+          ]
+        },
+        {"furigana": "くに", "kanji": "国", "romaji": "kuni", "tooltip": "land"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "ピザ", "romaji": "piza", "tooltip": "pizza"},
+            {"furigana": "", "kanji": "パスタ", "romaji": "pasuta", "tooltip": "pasta"},
+            {"furigana": "", "kanji": "ジェラート", "romaji": "jeraato", "tooltip": "gelato"},
+            {"furigana": "", "kanji": "ティラミス", "romaji": "tiramisu", "tooltip": "tiramisu"}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "とても", "kanji": "とても", "romaji": "totemo", "tooltip": "veldig"},
+            {"furigana": "すごく", "kanji": "凄く", "romaji": "sugoku", "tooltip": "utrolig"},
+            {"furigana": "ほんとうに", "kanji": "本当に", "romaji": "hontouni", "tooltip": "virkelig"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "おいしかった", "kanji": "美味しかった", "romaji": "oishikatta", "tooltip": "var deilig", "translations": ["FOOD var veldig god", "FOOD var veldig deilig"]},
+            {"furigana": "おいしい", "kanji": "美味しい", "romaji": "oishii", "tooltip": "deilig", "translations": ["FOOD er veldig god", "FOOD er veldig deilig"]},
+            {"furigana": "すき", "kanji": "好き", "romaji": "suki", "tooltip": "å like", "translations": ["jeg liker FOOD veldig godt"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "", "kanji": "ヴェネツィア", "romaji": "venetsia", "tooltip": "Venezia"},
+        {"furigana": "で", "kanji": "で", "romaji": "de", "tooltip": "[i/på]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "ゴンドラ", "romaji": "gondora", "tooltip": "gondol", "verb": {"furigana": "のりました", "kanji": "乗りました", "romaji": "norimashita", "tooltip": "tok/red"}, "translations": ["jeg tok gondol i venezia", "jeg red gondol i venezia"]},
+            {"furigana": "さんぽ", "kanji": "散歩", "romaji": "sanpo", "tooltip": "gåtur", "verb": {"furigana": "しました", "kanji": "しました", "romaji": "shimashita", "tooltip": "gjorde"}, "translations": ["jeg gikk en tur i venezia", "jeg spaserte i venezia"]},
+            {"furigana": "しゃしん", "kanji": "写真", "romaji": "shashin", "tooltip": "foto", "verb": {"furigana": "とりました", "kanji": "撮りました", "romaji": "torimashita", "tooltip": "tok"}, "translations": ["jeg tok bilder i venezia", "jeg fotograferte i venezia"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "ローマ", "romaji": "rooma", "tooltip": "Roma"},
+            {"furigana": "", "kanji": "フィレンツェ", "romaji": "firentse", "tooltip": "Firenze"},
+            {"furigana": "", "kanji": "ミラノ", "romaji": "mirano", "tooltip": "Milano"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "きれい", "kanji": "綺麗", "romaji": "kirei", "tooltip": "vakker", "translations": ["CITY er en vakker by"]},
+            {"furigana": "にぎやか", "kanji": "賑やか", "romaji": "nigiyaka", "tooltip": "livlig", "translations": ["CITY er en livlig by"]},
+            {"furigana": "ゆうめい", "kanji": "有名", "romaji": "yuumei", "tooltip": "kjent", "translations": ["CITY er en berømt by"]}
+          ]
+        },
+        {"furigana": "な", "kanji": "な", "romaji": "na", "tooltip": "[adjektiv-kobling]"},
+        {"furigana": "まち", "kanji": "街", "romaji": "machi", "tooltip": "by"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 6,
+      "template": [
+        {"furigana": "", "kanji": "イタリア", "romaji": "itaria", "tooltip": "Italia"},
+        {"furigana": "じん", "kanji": "人", "romaji": "jin", "tooltip": "person"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "あたたかい", "kanji": "温かい", "romaji": "atatakai", "tooltip": "varm/hjertelig", "translations": ["italienere er varme", "folk fra italia er hjertelige"]},
+            {"furigana": "しんせつ", "kanji": "親切", "romaji": "shinsetsu", "tooltip": "vennlig", "translations": ["italienere er vennlige", "folk fra italia er snille"]},
+            {"furigana": "あかるい", "kanji": "明るい", "romaji": "akarui", "tooltip": "munter", "translations": ["italienere er muntre", "folk fra italia er glade"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "category": "meg-selv",
+  "categoryName": "Meg selv",
+  "categoryNameJapanese": "自己紹介",
+  "emoji": "👤",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "シンドレ", "romaji": "shindore", "tooltip": "Sindre"},
+            {"furigana": "", "kanji": "アンナ", "romaji": "anna", "tooltip": "Anna"},
+            {"furigana": "", "kanji": "マリア", "romaji": "maria", "tooltip": "Maria"},
+            {"furigana": "", "kanji": "ヨハネス", "romaji": "yohanesu", "tooltip": "Johannes"}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["jeg heter NAME"]}
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "ノルウェー", "romaji": "noruwe", "tooltip": "Norge"},
+            {"furigana": "", "kanji": "スウェーデン", "romaji": "suweeden", "tooltip": "Sverige"},
+            {"furigana": "", "kanji": "デンマーク", "romaji": "denmaaku", "tooltip": "Danmark"},
+            {"furigana": "", "kanji": "アメリカ", "romaji": "amerika", "tooltip": "Amerika"}
+          ]
+        },
+        {"furigana": "じん", "kanji": "人", "romaji": "jin", "tooltip": "person"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["jeg er NATIONALITY"]}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "にじゅっ", "kanji": "二十", "romaji": "nijuu", "tooltip": "tjue"},
+            {"furigana": "にじゅうご", "kanji": "二十五", "romaji": "nijuugo", "tooltip": "tjuefem"},
+            {"furigana": "さんじゅっ", "kanji": "三十", "romaji": "sanjuu", "tooltip": "tretti"},
+            {"furigana": "さんじゅうご", "kanji": "三十五", "romaji": "sanjuugo", "tooltip": "trettifem"}
+          ]
+        },
+        {"furigana": "さい", "kanji": "歳", "romaji": "sai", "tooltip": "år"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["jeg er AGE år gammel"]}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "がくせい", "kanji": "学生", "romaji": "gakusei", "tooltip": "student", "translations": ["jeg er student"]},
+            {"furigana": "かいしゃいん", "kanji": "会社員", "romaji": "kaishain", "tooltip": "kontorarbeider", "translations": ["jeg er kontorarbeider"]},
+            {"furigana": "", "kanji": "プログラマー", "romaji": "puroguramaa", "tooltip": "programmerer", "translations": ["jeg er programmerer"]},
+            {"furigana": "せんせい", "kanji": "先生", "romaji": "sensei", "tooltip": "lærer", "translations": ["jeg er lærer"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "にほんご", "kanji": "日本語", "romaji": "nihongo", "tooltip": "japansk"},
+            {"furigana": "えいご", "kanji": "英語", "romaji": "eigo", "tooltip": "engelsk"},
+            {"furigana": "", "kanji": "スペイン語", "romaji": "supeingo", "tooltip": "spansk"},
+            {"furigana": "", "kanji": "フランス語", "romaji": "furansugo", "tooltip": "fransk"}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "べんきょう", "kanji": "勉強", "romaji": "benkyou", "tooltip": "studere", "extra": [{"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"}, {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg studerer LANGUAGE"]},
+            {"furigana": "ならって", "kanji": "習って", "romaji": "naratte", "tooltip": "lærer", "extra": [{"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg lærer LANGUAGE"]},
+            {"furigana": "はなします", "kanji": "話します", "romaji": "hanashimasu", "tooltip": "snakker", "translations": ["jeg snakker LANGUAGE"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "しゅみ", "kanji": "趣味", "romaji": "shumi", "tooltip": "hobby"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "りょこう", "kanji": "旅行", "romaji": "ryokou", "tooltip": "å reise", "translations": ["hobbyen min er å reise"]},
+            {"furigana": "おんがく", "kanji": "音楽", "romaji": "ongaku", "tooltip": "musikk", "translations": ["hobbyen min er musikk"]},
+            {"furigana": "どくしょ", "kanji": "読書", "romaji": "dokusho", "tooltip": "lesing", "translations": ["hobbyen min er å lese"]},
+            {"furigana": "", "kanji": "ゲーム", "romaji": "geemu", "tooltip": "spill", "translations": ["hobbyen min er spill"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 7,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "おんがく", "kanji": "音楽", "romaji": "ongaku", "tooltip": "musikk"},
+            {"furigana": "えいが", "kanji": "映画", "romaji": "eiga", "tooltip": "film"},
+            {"furigana": "", "kanji": "アニメ", "romaji": "anime", "tooltip": "anime"},
+            {"furigana": "", "kanji": "スポーツ", "romaji": "supootsu", "tooltip": "sport"}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "すき", "kanji": "好き", "romaji": "suki", "tooltip": "å like", "translations": ["jeg liker THING"]},
+            {"furigana": "だいすき", "kanji": "大好き", "romaji": "daisuki", "tooltip": "elsker", "translations": ["jeg elsker THING"]},
+            {"furigana": "きらい", "kanji": "嫌い", "romaji": "kirai", "tooltip": "misliker", "translations": ["jeg liker ikke THING"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 8,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "けっこん", "kanji": "結婚", "romaji": "kekkon", "tooltip": "gift", "extra": [{"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"}, {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg er gift"]},
+            {"furigana": "どくしん", "kanji": "独身", "romaji": "dokushin", "tooltip": "ugift", "translations": ["jeg er ugift"]},
+            {"furigana": "りこん", "kanji": "離婚", "romaji": "rikon", "tooltip": "skilt", "extra": [{"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"}, {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg er skilt"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 9,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "おすろ", "kanji": "オスロ", "romaji": "osuro", "tooltip": "Oslo"},
+            {"furigana": "", "kanji": "ベルゲン", "romaji": "berugen", "tooltip": "Bergen"},
+            {"furigana": "", "kanji": "トロンハイム", "romaji": "toronhaimu", "tooltip": "Trondheim"},
+            {"furigana": "", "kanji": "東京", "romaji": "toukyou", "tooltip": "Tokyo"}
+          ]
+        },
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[i]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "すんで", "kanji": "住んで", "romaji": "sunde", "tooltip": "bor", "extra": [{"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg bor i CITY"]},
+            {"furigana": "うまれました", "kanji": "生まれました", "romaji": "umaremashita", "tooltip": "ble født", "translations": ["jeg ble født i CITY"]},
+            {"furigana": "はたらいて", "kanji": "働いて", "romaji": "hataraite", "tooltip": "jobber", "extra": [{"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg jobber i CITY"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen"},
+            {"furigana": "よる", "kanji": "夜", "romaji": "yoru", "tooltip": "kveld"},
+            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "helg"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "がた", "kanji": "型", "romaji": "gata", "tooltip": "type", "translations": ["jeg er en TIME-person"]},
+            {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "på", "extra": [{"furigana": "げんき", "kanji": "元気", "romaji": "genki", "tooltip": "energisk"}, {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}], "translations": ["jeg er energisk om TIME"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

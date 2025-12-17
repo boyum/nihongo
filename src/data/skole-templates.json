@@ -1,0 +1,161 @@
+{
+  "category": "skole",
+  "categoryName": "Skole",
+  "categoryNameJapanese": "学校",
+  "emoji": "📚",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "すうがく", "kanji": "数学", "romaji": "suugaku", "tooltip": "matematikk"},
+            {"furigana": "えいご", "kanji": "英語", "romaji": "eigo", "tooltip": "engelsk"},
+            {"furigana": "れきし", "kanji": "歴史", "romaji": "rekishi", "tooltip": "historie"},
+            {"furigana": "りか", "kanji": "理科", "romaji": "rika", "tooltip": "naturfag"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "むずかしい", "kanji": "難しい", "romaji": "muzukashii", "tooltip": "vanskelig", "translations": ["SUBJECT er vanskelig"]},
+            {"furigana": "かんたん", "kanji": "簡単", "romaji": "kantan", "tooltip": "lett", "translations": ["SUBJECT er lett"]},
+            {"furigana": "おもしろい", "kanji": "面白い", "romaji": "omoshiroi", "tooltip": "interessant", "translations": ["SUBJECT er interessant"]},
+            {"furigana": "つまらない", "kanji": "つまらない", "romaji": "tsumaranai", "tooltip": "kjedelig", "translations": ["SUBJECT er kjedelig"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {"furigana": "じゅぎょう", "kanji": "授業", "romaji": "jugyou", "tooltip": "time"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte"},
+            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni"},
+            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti"}
+          ]
+        },
+        {"furigana": "じ", "kanji": "時", "romaji": "ji", "tooltip": "klokken"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[på]", "isParticle": true},
+        {"furigana": "はじまります", "kanji": "始まります", "romaji": "hajimarimasu", "tooltip": "å begynne"},
+        {"translations": ["timen starter klokken TIME"]}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {"furigana": "きょうしつ", "kanji": "教室", "romaji": "kyoushitsu", "tooltip": "klasserom"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[i]", "isParticle": true},
+        {"furigana": "せいと", "kanji": "生徒", "romaji": "seito", "tooltip": "elever"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "にじゅう", "kanji": "二十", "romaji": "nijuu", "tooltip": "tjue"},
+            {"furigana": "さんじゅう", "kanji": "三十", "romaji": "sanjuu", "tooltip": "tretti"},
+            {"furigana": "よんじゅう", "kanji": "四十", "romaji": "yonjuu", "tooltip": "førti"}
+          ]
+        },
+        {"furigana": "にん", "kanji": "人", "romaji": "nin", "tooltip": "personer"},
+        {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "finnes"},
+        {"translations": ["det er NUM elever i klasserommet"]}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {"furigana": "せんせい", "kanji": "先生", "romaji": "sensei", "tooltip": "lærer"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "しんせつ", "kanji": "親切", "romaji": "shinsetsu", "tooltip": "vennlig", "translations": ["læreren er snill"]},
+            {"furigana": "きびしい", "kanji": "厳しい", "romaji": "kibishii", "tooltip": "streng", "translations": ["læreren er streng"]},
+            {"furigana": "やさしい", "kanji": "優しい", "romaji": "yasashii", "tooltip": "snill", "translations": ["læreren er snill"]},
+            {"furigana": "おもしろい", "kanji": "面白い", "romaji": "omoshiroi", "tooltip": "morsom", "translations": ["læreren er morsom"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {"furigana": "しゅくだい", "kanji": "宿題", "romaji": "shukudai", "tooltip": "lekser"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "おおい", "kanji": "多い", "romaji": "ooi", "tooltip": "mange", "translations": ["det er mye lekser"]},
+            {"furigana": "すくない", "kanji": "少ない", "romaji": "sukunai", "tooltip": "lite", "translations": ["det er lite lekser"]},
+            {"furigana": "むずかしい", "kanji": "難しい", "romaji": "muzukashii", "tooltip": "vanskelige", "translations": ["leksene er vanskelige"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 6,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "としょかん", "kanji": "図書館", "romaji": "toshokan", "tooltip": "bibliotek"},
+            {"furigana": "きょうしつ", "kanji": "教室", "romaji": "kyoushitsu", "tooltip": "klasserom"},
+            {"furigana": "いえ", "kanji": "家", "romaji": "ie", "tooltip": "hjemme"}
+          ]
+        },
+        {"furigana": "で", "kanji": "で", "romaji": "de", "tooltip": "[i]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "べんきょう", "kanji": "勉強", "romaji": "benkyou", "tooltip": "å studere", "translations": ["jeg studerer på PLACE"]},
+            {"furigana": "しゅくだい", "kanji": "宿題", "romaji": "shukudai", "tooltip": "lekser", "translations": ["jeg gjør lekser på PLACE"]},
+            {"furigana": "よみもの", "kanji": "読み物", "romaji": "yomimono", "tooltip": "lesing", "translations": ["jeg leser på PLACE"]}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre"}
+      ]
+    },
+    {
+      "id": 7,
+      "template": [
+        {"furigana": "しけん", "kanji": "試験", "romaji": "shiken", "tooltip": "eksamen"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "らいしゅう", "kanji": "来週", "romaji": "raishuu", "tooltip": "neste uke"},
+            {"furigana": "らいげつ", "kanji": "来月", "romaji": "raigetsu", "tooltip": "neste måned"},
+            {"furigana": "あした", "kanji": "明日", "romaji": "ashita", "tooltip": "i morgen"}
+          ]
+        },
+        {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"},
+        {"translations": ["det er eksamen TIME"]}
+      ]
+    },
+    {
+      "id": 8,
+      "template": [
+        {"furigana": "ともだち", "kanji": "友達", "romaji": "tomodachi", "tooltip": "venner"},
+        {"furigana": "と", "kanji": "と", "romaji": "to", "tooltip": "[med]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "ひるごはん", "kanji": "昼ご飯", "romaji": "hirugohan", "tooltip": "lunsj", "verb": {"furigana": "たべます", "kanji": "食べます", "romaji": "tabemasu", "tooltip": "å spise"}, "translations": ["jeg spiser lunsj med venner"]},
+            {"furigana": "べんきょう", "kanji": "勉強", "romaji": "benkyou", "tooltip": "studere", "verb": {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre"}, "translations": ["jeg studerer med venner"]},
+            {"furigana": "", "kanji": "サッカー", "romaji": "sakkaa", "tooltip": "fotball", "verb": {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre"}, "translations": ["jeg spiller fotball med venner"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

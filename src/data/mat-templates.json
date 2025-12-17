@@ -1,0 +1,131 @@
+{
+  "category": "mat",
+  "categoryName": "Mat",
+  "categoryNameJapanese": "食べ物",
+  "emoji": "🍜",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "すし", "romaji": "sushi", "tooltip": "sushi"},
+            {"furigana": "", "kanji": "ラーメン", "romaji": "raamen", "tooltip": "ramen"},
+            {"furigana": "", "kanji": "カレー", "romaji": "karee", "tooltip": "karri"},
+            {"furigana": "", "kanji": "てんぷら", "romaji": "tenpura", "tooltip": "tempura"}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "すき", "kanji": "好き", "romaji": "suki", "tooltip": "å like", "translations": ["jeg liker FOOD"]},
+            {"furigana": "だいすき", "kanji": "大好き", "romaji": "daisuki", "tooltip": "elsker", "translations": ["jeg elsker FOOD", "jeg er veldig glad i FOOD"]},
+            {"furigana": "きらい", "kanji": "嫌い", "romaji": "kirai", "tooltip": "misliker", "translations": ["jeg liker ikke FOOD", "jeg misliker FOOD"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"},
+            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke"},
+            {"furigana": "ときどき", "kanji": "時々", "romaji": "tokidoki", "tooltip": "av og til"},
+            {"furigana": "よく", "kanji": "よく", "romaji": "yoku", "tooltip": "ofte"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "ラーメン", "romaji": "raamen", "tooltip": "ramen"},
+            {"furigana": "", "kanji": "すし", "romaji": "sushi", "tooltip": "sushi"},
+            {"furigana": "", "kanji": "うどん", "romaji": "udon", "tooltip": "udon"},
+            {"furigana": "やさい", "kanji": "野菜", "romaji": "yasai", "tooltip": "grønnsaker"}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "たべます", "kanji": "食べます", "romaji": "tabemasu", "tooltip": "å spise"},
+        {"translations": ["jeg spiser FOOD FREQ"]}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen"},
+            {"furigana": "ひる", "kanji": "昼", "romaji": "hiru", "tooltip": "lunsj"},
+            {"furigana": "よる", "kanji": "夜", "romaji": "yoru", "tooltip": "kveld"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "コーヒー", "romaji": "koohii", "tooltip": "kaffe"},
+            {"furigana": "", "kanji": "お茶", "romaji": "ocha", "tooltip": "te"},
+            {"furigana": "みず", "kanji": "水", "romaji": "mizu", "tooltip": "vann"},
+            {"furigana": "", "kanji": "ジュース", "romaji": "juusu", "tooltip": "juice"}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "のみます", "kanji": "飲みます", "romaji": "nomimasu", "tooltip": "å drikke"},
+        {"translations": ["jeg drikker DRINK om TIME"]}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "にほん", "kanji": "日本", "romaji": "nihon", "tooltip": "Japan"},
+            {"furigana": "", "kanji": "イタリア", "romaji": "itaria", "tooltip": "Italia"},
+            {"furigana": "", "kanji": "フランス", "romaji": "furansu", "tooltip": "Frankrike"},
+            {"furigana": "", "kanji": "タイ", "romaji": "tai", "tooltip": "Thailand"}
+          ]
+        },
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "たべもの", "kanji": "食べ物", "romaji": "tabemono", "tooltip": "mat"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "おいしい", "kanji": "美味しい", "romaji": "oishii", "tooltip": "deilig", "translations": ["COUNTRY mat er deilig", "mat fra COUNTRY er god"]},
+            {"furigana": "けんこうてき", "kanji": "健康的", "romaji": "kenkouteki", "tooltip": "sunn", "translations": ["COUNTRY mat er sunn", "mat fra COUNTRY er sunn"]},
+            {"furigana": "からい", "kanji": "辛い", "romaji": "karai", "tooltip": "sterk", "translations": ["COUNTRY mat er sterk", "mat fra COUNTRY er krydret"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {"furigana": "おなか", "kanji": "お腹", "romaji": "onaka", "tooltip": "mage"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "すきました", "kanji": "空きました", "romaji": "sukimashita", "tooltip": "tom (sulten)", "translations": ["jeg er sulten", "magen er tom"]},
+            {"furigana": "いっぱい", "kanji": "いっぱい", "romaji": "ippai", "tooltip": "full", "translations": ["jeg er mett", "magen er full"]},
+            {"furigana": "いたい", "kanji": "痛い", "romaji": "itai", "tooltip": "vondt", "translations": ["jeg har vondt i magen", "magen gjør vondt"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    }
+  ]
+}

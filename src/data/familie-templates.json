@@ -1,0 +1,169 @@
+{
+  "category": "familie",
+  "categoryName": "Familie",
+  "categoryNameJapanese": "家族",
+  "emoji": "👨‍👩‍👧‍👦",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {"furigana": "かぞく", "kanji": "家族", "romaji": "kazoku", "tooltip": "familie"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "さんにん", "kanji": "三人", "romaji": "sannin", "tooltip": "tre personer"},
+            {"furigana": "よにん", "kanji": "四人", "romaji": "yonin", "tooltip": "fire personer"},
+            {"furigana": "ごにん", "kanji": "五人", "romaji": "gonin", "tooltip": "fem personer"}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["familien er på NUM"]}
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "ちち", "kanji": "父", "romaji": "chichi", "tooltip": "far"},
+            {"furigana": "はは", "kanji": "母", "romaji": "haha", "tooltip": "mor"},
+            {"furigana": "あに", "kanji": "兄", "romaji": "ani", "tooltip": "storebror"},
+            {"furigana": "あね", "kanji": "姉", "romaji": "ane", "tooltip": "storesøster"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "いしゃ", "kanji": "医者", "romaji": "isha", "tooltip": "lege"},
+            {"furigana": "せんせい", "kanji": "先生", "romaji": "sensei", "tooltip": "lærer"},
+            {"furigana": "かいしゃいん", "kanji": "会社員", "romaji": "kaishain", "tooltip": "kontorarbeider"},
+            {"furigana": "がくせい", "kanji": "学生", "romaji": "gakusei", "tooltip": "student"}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["FAMILY er JOB"]}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "そふ", "kanji": "祖父", "romaji": "sofu", "tooltip": "bestefar"},
+            {"furigana": "そぼ", "kanji": "祖母", "romaji": "sobo", "tooltip": "bestemor"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "はちじゅっ", "kanji": "八十", "romaji": "hachijuu", "tooltip": "åtti"},
+            {"furigana": "きゅうじゅう", "kanji": "九十", "romaji": "kyuujuu", "tooltip": "nitti"},
+            {"furigana": "ななじゅう", "kanji": "七十", "romaji": "nanajuu", "tooltip": "sytti"}
+          ]
+        },
+        {"furigana": "さい", "kanji": "歳", "romaji": "sai", "tooltip": "år"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["GRANDPARENT er AGE år"]}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "むすこ", "kanji": "息子", "romaji": "musuko", "tooltip": "sønn"},
+            {"furigana": "むすめ", "kanji": "娘", "romaji": "musume", "tooltip": "datter"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "さん", "kanji": "三", "romaji": "san", "tooltip": "tre"},
+            {"furigana": "ご", "kanji": "五", "romaji": "go", "tooltip": "fem"},
+            {"furigana": "なな", "kanji": "七", "romaji": "nana", "tooltip": "syv"}
+          ]
+        },
+        {"furigana": "さい", "kanji": "歳", "romaji": "sai", "tooltip": "år"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["CHILD er AGE år"]}
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke"},
+            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "i helgen"},
+            {"furigana": "ときどき", "kanji": "時々", "romaji": "tokidoki", "tooltip": "av og til"}
+          ]
+        },
+        {"furigana": "かぞく", "kanji": "家族", "romaji": "kazoku", "tooltip": "familie"},
+        {"furigana": "と", "kanji": "と", "romaji": "to", "tooltip": "[med]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "でかけます", "kanji": "出かけます", "romaji": "dekakemasu", "tooltip": "å dra ut", "translations": ["FREQ drar vi ut med familien"]},
+            {"furigana": "りょこう", "kanji": "旅行", "romaji": "ryokou", "tooltip": "reise", "extra": [{"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre"}], "translations": ["FREQ reiser vi med familien"]},
+            {"furigana": "ごはん", "kanji": "ご飯", "romaji": "gohan", "tooltip": "måltid", "extra": [{"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true}, {"furigana": "たべます", "kanji": "食べます", "romaji": "tabemasu", "tooltip": "å spise"}], "translations": ["FREQ spiser vi sammen"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "ちち", "kanji": "父", "romaji": "chichi", "tooltip": "far"},
+            {"furigana": "はは", "kanji": "母", "romaji": "haha", "tooltip": "mor"},
+            {"furigana": "あに", "kanji": "兄", "romaji": "ani", "tooltip": "storebror"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "りょうり", "kanji": "料理", "romaji": "ryouri", "tooltip": "matlaging", "adjective": {"furigana": "じょうず", "kanji": "上手", "romaji": "jouzu", "tooltip": "flink"}, "translations": ["FAMILY er flink til å lage mat"]},
+            {"furigana": "うんてん", "kanji": "運転", "romaji": "unten", "tooltip": "kjøring", "adjective": {"furigana": "じょうず", "kanji": "上手", "romaji": "jouzu", "tooltip": "flink"}, "translations": ["FAMILY er flink til å kjøre"]},
+            {"furigana": "", "kanji": "スポーツ", "romaji": "supootsu", "tooltip": "sport", "adjective": {"furigana": "とくい", "kanji": "得意", "romaji": "tokui", "tooltip": "god til"}, "translations": ["FAMILY er god i sport"]}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true}
+      ]
+    },
+    {
+      "id": 7,
+      "template": [
+        {"furigana": "かぞく", "kanji": "家族", "romaji": "kazoku", "tooltip": "familie"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "とても", "kanji": "とても", "romaji": "totemo", "tooltip": "veldig"},
+            {"furigana": "ほんとうに", "kanji": "本当に", "romaji": "hontouni", "tooltip": "virkelig"},
+            {"furigana": "すごく", "kanji": "凄く", "romaji": "sugoku", "tooltip": "utrolig"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "たいせつ", "kanji": "大切", "romaji": "taisetsu", "tooltip": "viktig", "translations": ["familien er INTENS viktig"]},
+            {"furigana": "なかよし", "kanji": "仲良し", "romaji": "nakayoshi", "tooltip": "tette", "translations": ["familien er INTENS tett"]},
+            {"furigana": "たのしい", "kanji": "楽しい", "romaji": "tanoshii", "tooltip": "morsom", "translations": ["familien er INTENS morsom"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    }
+  ]
+}

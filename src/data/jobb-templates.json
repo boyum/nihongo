@@ -1,0 +1,156 @@
+{
+  "category": "jobb",
+  "categoryName": "Jobb",
+  "categoryNameJapanese": "仕事",
+  "emoji": "💼",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "プログラマー", "romaji": "puroguramaa", "tooltip": "programmerer"},
+            {"furigana": "いしゃ", "kanji": "医者", "romaji": "isha", "tooltip": "lege"},
+            {"furigana": "せんせい", "kanji": "先生", "romaji": "sensei", "tooltip": "lærer"},
+            {"furigana": "かんごし", "kanji": "看護師", "romaji": "kangoshi", "tooltip": "sykepleier"}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["jeg er JOB"]}
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte"},
+            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni"},
+            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti"}
+          ]
+        },
+        {"furigana": "じかん", "kanji": "時間", "romaji": "jikan", "tooltip": "timer"},
+        {"furigana": "はたらきます", "kanji": "働きます", "romaji": "hatarakimasu", "tooltip": "å jobbe"},
+        {"translations": ["jeg jobber NUM timer hver dag"]}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {"furigana": "じむしょ", "kanji": "事務所", "romaji": "jimusho", "tooltip": "kontor"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "しずか", "kanji": "静か", "romaji": "shizuka", "tooltip": "stille", "translations": ["kontoret er stille"]},
+            {"furigana": "にぎやか", "kanji": "賑やか", "romaji": "nigiyaka", "tooltip": "livlig", "translations": ["kontoret er livlig"]},
+            {"furigana": "きれい", "kanji": "綺麗", "romaji": "kirei", "tooltip": "pent", "translations": ["kontoret er pent"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {"furigana": "どうりょう", "kanji": "同僚", "romaji": "douryou", "tooltip": "kollega"},
+        {"furigana": "と", "kanji": "と", "romaji": "to", "tooltip": "[med]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "かいぎ", "kanji": "会議", "romaji": "kaigi", "tooltip": "møte", "translations": ["jeg har møte med kollegaer"]},
+            {"furigana": "ひるごはん", "kanji": "昼ご飯", "romaji": "hirugohan", "tooltip": "lunsj", "translations": ["jeg spiser lunsj med kollegaer"]},
+            {"furigana": "", "kanji": "プロジェクト", "romaji": "purojekuto", "tooltip": "prosjekt", "translations": ["jeg jobber med prosjekt med kollegaer"]}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre"}
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {"furigana": "きょう", "kanji": "今日", "romaji": "kyou", "tooltip": "i dag"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "いそがしい", "kanji": "忙しい", "romaji": "isogashii", "tooltip": "travel", "translations": ["i dag er det travelt"]},
+            {"furigana": "ひま", "kanji": "暇", "romaji": "hima", "tooltip": "ledig", "translations": ["i dag er det rolig"]},
+            {"furigana": "たいへん", "kanji": "大変", "romaji": "taihen", "tooltip": "tøff", "translations": ["i dag er det tøft"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 6,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "", "kanji": "メール", "romaji": "meeru", "tooltip": "e-post"},
+            {"furigana": "でんわ", "kanji": "電話", "romaji": "denwa", "tooltip": "telefon"},
+            {"furigana": "ほうこく", "kanji": "報告", "romaji": "houkoku", "tooltip": "rapport"}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "たくさん", "kanji": "沢山", "romaji": "takusan", "tooltip": "mange"},
+            {"furigana": "すこし", "kanji": "少し", "romaji": "sukoshi", "tooltip": "litt"},
+            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "おくります", "kanji": "送ります", "romaji": "okurimasu", "tooltip": "å sende", "translations": ["jeg sender FREQ THING"]},
+            {"furigana": "かきます", "kanji": "書きます", "romaji": "kakimasu", "tooltip": "å skrive", "translations": ["jeg skriver FREQ THING"]},
+            {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre", "translations": ["jeg gjør FREQ THING"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "template": [
+        {"furigana": "しめきり", "kanji": "締め切り", "romaji": "shimekiri", "tooltip": "deadline"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "あした", "kanji": "明日", "romaji": "ashita", "tooltip": "i morgen"},
+            {"furigana": "らいしゅう", "kanji": "来週", "romaji": "raishuu", "tooltip": "neste uke"},
+            {"furigana": "きょう", "kanji": "今日", "romaji": "kyou", "tooltip": "i dag"}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"translations": ["fristen er TIME"]}
+      ]
+    },
+    {
+      "id": 8,
+      "template": [
+        {"furigana": "しごと", "kanji": "仕事", "romaji": "shigoto", "tooltip": "jobb"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "やりがい", "kanji": "やりがい", "romaji": "yarigai", "tooltip": "givende", "translations": ["jobben er givende"]},
+            {"furigana": "たのしい", "kanji": "楽しい", "romaji": "tanoshii", "tooltip": "gøy", "translations": ["jobben er gøy"]},
+            {"furigana": "むずかしい", "kanji": "難しい", "romaji": "muzukashii", "tooltip": "vanskelig", "translations": ["jobben er vanskelig"]}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"}
+      ]
+    }
+  ]
+}

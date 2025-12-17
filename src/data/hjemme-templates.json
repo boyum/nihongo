@@ -1,0 +1,133 @@
+{
+  "category": "hjemme",
+  "categoryName": "Hjemme",
+  "categoryNameJapanese": "家で",
+  "emoji": "🏠",
+  "sentenceTemplates": [
+    {
+      "id": 1,
+      "template": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "いえ", "kanji": "家", "romaji": "ie", "tooltip": "hus"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "ちいさい", "kanji": "小さい", "romaji": "chiisai", "tooltip": "liten", "translations": ["huset mitt er lite"]},
+            {"furigana": "おおきい", "kanji": "大きい", "romaji": "ookii", "tooltip": "stort", "translations": ["huset mitt er stort"]},
+            {"furigana": "あたらしい", "kanji": "新しい", "romaji": "atarashii", "tooltip": "nytt", "translations": ["huset mitt er nytt"]},
+            {"furigana": "ふるい", "kanji": "古い", "romaji": "furui", "tooltip": "gammelt", "translations": ["huset mitt er gammelt"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 2,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "へや", "kanji": "部屋", "romaji": "heya", "tooltip": "rom"},
+            {"furigana": "まど", "kanji": "窓", "romaji": "mado", "tooltip": "vindu"},
+            {"furigana": "", "kanji": "トイレ", "romaji": "toire", "tooltip": "toalett"}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "みっつ", "kanji": "三つ", "romaji": "mittsu", "tooltip": "tre"},
+            {"furigana": "よっつ", "kanji": "四つ", "romaji": "yottsu", "tooltip": "fire"},
+            {"furigana": "いつつ", "kanji": "五つ", "romaji": "itsutsu", "tooltip": "fem"}
+          ]
+        },
+        {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"},
+        {"translations": ["det er NUM THING"]}
+      ]
+    },
+    {
+      "id": 3,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "だいどころ", "kanji": "台所", "romaji": "daidokoro", "tooltip": "kjøkken"},
+            {"furigana": "りびんぐ", "kanji": "リビング", "romaji": "ribingu", "tooltip": "stue"},
+            {"furigana": "しんしつ", "kanji": "寝室", "romaji": "shinshitsu", "tooltip": "soverom"}
+          ]
+        },
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "ひろい", "kanji": "広い", "romaji": "hiroi", "tooltip": "romslig", "translations": ["ROOM er romslig"]},
+            {"furigana": "せまい", "kanji": "狭い", "romaji": "semai", "tooltip": "trang", "translations": ["ROOM er trang"]},
+            {"furigana": "きれい", "kanji": "綺麗", "romaji": "kirei", "tooltip": "pen", "translations": ["ROOM er pen"]}
+          ]
+        },
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ]
+    },
+    {
+      "id": 4,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"},
+            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke"},
+            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "i helgen"}
+          ]
+        },
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "そうじ", "kanji": "掃除", "romaji": "souji", "tooltip": "rengjøring", "translations": ["jeg rengjør FREQ"]},
+            {"furigana": "せんたく", "kanji": "洗濯", "romaji": "sentaku", "tooltip": "klesvask", "translations": ["jeg vasker klær FREQ"]},
+            {"furigana": "りょうり", "kanji": "料理", "romaji": "ryouri", "tooltip": "matlaging", "translations": ["jeg lager mat FREQ"]}
+          ]
+        },
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "å gjøre"}
+      ]
+    },
+    {
+      "id": 5,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "まど", "kanji": "窓", "romaji": "mado", "tooltip": "vindu", "verb": {"furigana": "あけます", "kanji": "開けます", "romaji": "akemasu", "tooltip": "å åpne"}, "translations": ["jeg åpner THING"]},
+            {"furigana": "", "kanji": "ドア", "romaji": "doa", "tooltip": "dør", "verb": {"furigana": "しめます", "kanji": "閉めます", "romaji": "shimemasu", "tooltip": "å lukke"}, "translations": ["jeg lukker THING"]},
+            {"furigana": "でんき", "kanji": "電気", "romaji": "denki", "tooltip": "lys", "verb": {"furigana": "つけます", "kanji": "つけます", "romaji": "tsukemasu", "tooltip": "å slå på"}, "translations": ["jeg slår på THING"]}
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "template": [
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "にわ", "kanji": "庭", "romaji": "niwa", "tooltip": "hage"},
+            {"furigana": "", "kanji": "ベランダ", "romaji": "beranda", "tooltip": "balkong"},
+            {"furigana": "げんかん", "kanji": "玄関", "romaji": "genkan", "tooltip": "entre"}
+          ]
+        },
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[i]", "isParticle": true},
+        {
+          "type": "variable",
+          "options": [
+            {"furigana": "はな", "kanji": "花", "romaji": "hana", "tooltip": "blomster", "verb": {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"}, "translations": ["det er THING i PLACE"]},
+            {"furigana": "いす", "kanji": "椅子", "romaji": "isu", "tooltip": "stol", "verb": {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"}, "translations": ["det er THING i PLACE"]},
+            {"furigana": "くつ", "kanji": "靴", "romaji": "kutsu", "tooltip": "sko", "verb": {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"}, "translations": ["det er THING i PLACE"]}
+          ]
+        },
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true}
+      ]
+    }
+  ]
+}

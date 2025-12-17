@@ -1,16 +1,107 @@
 ---
 import megSelv from '../data/meg-selv.json';
+import megSelvTemplates from '../data/meg-selv-templates.json';
 import mat from '../data/mat.json';
+import matTemplates from '../data/mat-templates.json';
 import tog from '../data/tog.json';
 import italia from '../data/italia.json';
+import italiaTemplates from '../data/italia-templates.json';
 import hiroshima from '../data/hiroshima.json';
 import dagligeRutiner from '../data/daglige-rutiner.json';
+import dagligeRutinerTemplates from '../data/daglige-rutiner-templates.json';
 import hjemme from '../data/hjemme.json';
+import hjemmeTemplates from '../data/hjemme-templates.json';
 import skole from '../data/skole.json';
+import skoleTemplates from '../data/skole-templates.json';
 import jobb from '../data/jobb.json';
+import jobbTemplates from '../data/jobb-templates.json';
 import familie from '../data/familie.json';
+import familieTemplates from '../data/familie-templates.json';
 
-const categories = [megSelv, mat, tog, italia, hiroshima, dagligeRutiner, hjemme, skole, jobb, familie];
+// Funksjon for å generere dynamiske setninger fra maler
+function generateSentencesFromTemplates(category: any) {
+  if (!category.sentenceTemplates) {
+    return category;
+  }
+
+  const sentences = category.sentenceTemplates.map((template: any) => {
+    const words: any[] = [];
+    let answerParts: string[] = [];
+    const selectedOptions: any = {};
+
+    template.template.forEach((item: any, index: number) => {
+      if (item.type === 'variable') {
+        // Velg et tilfeldig alternativ
+        const randomOption = item.options[Math.floor(Math.random() * item.options.length)];
+        selectedOptions[index] = randomOption;
+
+        // Legg til hovedordet
+        words.push({
+          furigana: randomOption.furigana,
+          kanji: randomOption.kanji,
+          romaji: randomOption.romaji,
+          tooltip: randomOption.tooltip,
+          isParticle: randomOption.isParticle || false
+        });
+
+        // Legg til ekstra ord hvis de finnes (f.eks. partikler eller hjelpeverb)
+        if (randomOption.extra) {
+          randomOption.extra.forEach((extraWord: any) => {
+            words.push(extraWord);
+          });
+        }
+
+        // Legg til verb hvis det finnes
+        if (randomOption.verb) {
+          words.push({
+            furigana: "を",
+            kanji: "を",
+            romaji: "o",
+            tooltip: "[objekt-partikkel]",
+            isParticle: true
+          });
+          words.push(randomOption.verb);
+        }
+
+        // Lagre oversettelser
+        if (randomOption.translations) {
+          answerParts = randomOption.translations;
+        }
+      } else {
+        // Vanlig ord, ikke variabelt
+        words.push(item);
+      }
+    });
+
+    // Hvis ingen spesifikke oversettelser er definert, bruk standard
+    if (answerParts.length === 0) {
+      answerParts = ["standardoversettelse"];
+    }
+
+    return {
+      id: template.id,
+      words: words,
+      answers: answerParts
+    };
+  });
+
+  return {
+    ...category,
+    sentences: sentences
+  };
+}
+
+// Generer dynamiske setninger for alle kategorier med maler
+const megSelvGenerated = generateSentencesFromTemplates(megSelvTemplates);
+const matGenerated = generateSentencesFromTemplates(matTemplates);
+const italiaGenerated = generateSentencesFromTemplates(italiaTemplates);
+const dagligeRutinerGenerated = generateSentencesFromTemplates(dagligeRutinerTemplates);
+const hjemmeGenerated = generateSentencesFromTemplates(hjemmeTemplates);
+const skoleGenerated = generateSentencesFromTemplates(skoleTemplates);
+const jobbGenerated = generateSentencesFromTemplates(jobbTemplates);
+const familieGenerated = generateSentencesFromTemplates(familieTemplates);
+
+const categories = [megSelvGenerated, matGenerated, tog, italiaGenerated, hiroshima, dagligeRutinerGenerated, hjemmeGenerated, skoleGenerated, jobbGenerated, familieGenerated];
 ---
 
 <!DOCTYPE html>
