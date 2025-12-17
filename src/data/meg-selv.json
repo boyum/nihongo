@@ -1,0 +1,120 @@
+{
+  "category": "meg-selv",
+  "categoryName": "Meg selv",
+  "categoryNameJapanese": "自己紹介",
+  "emoji": "👤",
+  "sentences": [
+    {
+      "id": 1,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "", "kanji": "シンドレ", "romaji": "shindore", "tooltip": "Sindre (navn i katakana)"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["jeg heter", "jeg het", "jeg heit", "navnet mitt er", "jeg heter sindre"]
+    },
+    {
+      "id": 2,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "", "kanji": "ノルウェー", "romaji": "noruwe", "tooltip": "Norge"},
+        {"furigana": "じん", "kanji": "人", "romaji": "jin", "tooltip": "person, -sk (nasjonalitet)"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["jeg er norsk", "jeg er fra norge"]
+    },
+    {
+      "id": 3,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "さんじゅっ", "kanji": "三十", "romaji": "sanjuu", "tooltip": "30 (tretti)"},
+        {"furigana": "さい", "kanji": "歳", "romaji": "sai", "tooltip": "år (alder)"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["jeg er 30 år gammel", "jeg er tretti år", "jeg er 30 år", "jeg er tretti år gammel"]
+    },
+    {
+      "id": 4,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "がくせい", "kanji": "学生", "romaji": "gakusei", "tooltip": "student"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["jeg er student"]
+    },
+    {
+      "id": 5,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "にほんご", "kanji": "日本語", "romaji": "nihongo", "tooltip": "japansk språk"},
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "べんきょう", "kanji": "勉強", "romaji": "benkyou", "tooltip": "studere"},
+        {"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"},
+        {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er (tilstand)"}
+      ],
+      "answers": ["jeg studerer japansk", "jeg lærer japansk"]
+    },
+    {
+      "id": 6,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "しゅみ", "kanji": "趣味", "romaji": "shumi", "tooltip": "hobby"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "りょこう", "kanji": "旅行", "romaji": "ryokou", "tooltip": "reise"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["hobbyen min er å reise", "min hobby er å reise", "jeg liker å reise"]
+    },
+    {
+      "id": 7,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "おんがく", "kanji": "音楽", "romaji": "ongaku", "tooltip": "musikk"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {"furigana": "すき", "kanji": "好き", "romaji": "suki", "tooltip": "å like"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["jeg liker musikk"]
+    },
+    {
+      "id": 8,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "けっこん", "kanji": "結婚", "romaji": "kekkon", "tooltip": "gift"},
+        {"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"},
+        {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}
+      ],
+      "answers": ["jeg er gift"]
+    },
+    {
+      "id": 9,
+      "words": [
+        {"furigana": "どうぞ", "kanji": "どうぞ", "romaji": "douzo", "tooltip": "vær så snill"},
+        {"furigana": "よろしく", "kanji": "よろしく", "romaji": "yoroshiku", "tooltip": "snakkes"},
+        {"furigana": "おねがい", "kanji": "お願い", "romaji": "onegai", "tooltip": "takk"},
+        {"furigana": "します", "kanji": "します", "romaji": "shimasu", "tooltip": "gjør"}
+      ],
+      "answers": ["hyggelig å møte deg", "hyggelig å hilse på deg", "gledelig"]
+    },
+    {
+      "id": 10,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "おすろ", "kanji": "オスロ", "romaji": "osuro", "tooltip": "Oslo"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[i]", "isParticle": true},
+        {"furigana": "すんで", "kanji": "住んで", "romaji": "sunde", "tooltip": "bor"},
+        {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}
+      ],
+      "answers": ["jeg bor i oslo"]
+    }
+  ]
+}

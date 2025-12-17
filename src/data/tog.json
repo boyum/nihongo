@@ -1,0 +1,125 @@
+{
+  "category": "tog",
+  "categoryName": "Tog",
+  "categoryNameJapanese": "電車",
+  "emoji": "🚆",
+  "sentences": [
+    {
+      "id": 1,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "Jeg - Personlig pronomen (nøytralt/høflig)"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel] - Markerer subjektet i setningen", "isParticle": true},
+        {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag - Tidsuttrykk"},
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog (elektrisk tog)"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[til/med] - Partikkel som markerer retning eller middel", "isParticle": true},
+        {"furigana": "のります", "kanji": "乗ります", "romaji": "norimasu", "tooltip": "å ta (transport), å kjøre", "verb": {"polite": "乗ります (norimasu)", "casual": "乗る (noru)", "past": "乗りました (norimashita)", "negative": "乗りません (norimasen)"}}
+      ],
+      "answers": ["jeg tar toget hver dag", "jeg kjører tog hver dag", "jeg reiser med tog hver dag"]
+    },
+    {
+      "id": 2,
+      "words": [
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "はやい", "kanji": "速い", "romaji": "hayai", "tooltip": "rask, hurtig"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["toget er raskt", "toget er hurtig", "tog er raskt", "tog er hurtige"]
+    },
+    {
+      "id": 3,
+      "words": [
+        {"furigana": "しんかんせん", "kanji": "新幹線", "romaji": "shinkansen", "tooltip": "shinkansen (lytoget)"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "とても", "kanji": "とても", "romaji": "totemo", "tooltip": "veldig, svært"},
+        {"furigana": "はやい", "kanji": "速い", "romaji": "hayai", "tooltip": "rask, hurtig"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["shinkansen er veldig rask", "shinkansen er veldig hurtig", "lytoget er veldig raskt"]
+    },
+    {
+      "id": 4,
+      "words": [
+        {"furigana": "えき", "kanji": "駅", "romaji": "eki", "tooltip": "stasjon (togstasjon)"},
+        {"furigana": "で", "kanji": "で", "romaji": "de", "tooltip": "[på, ved, i]", "isParticle": true},
+        {"furigana": "きっぷ", "kanji": "切符", "romaji": "kippu", "tooltip": "billett"},
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "かいます", "kanji": "買います", "romaji": "kaimasu", "tooltip": "å kjøpe", "verb": {"polite": "買います (kaimasu)", "casual": "買う (kau)"}}
+      ],
+      "answers": ["jeg kjøper billett på stasjonen", "jeg kjøper en billett på stasjonen"]
+    },
+    {
+      "id": 5,
+      "words": [
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "なか", "kanji": "中", "romaji": "naka", "tooltip": "inni, inne i"},
+        {"furigana": "で", "kanji": "で", "romaji": "de", "tooltip": "[i, på]", "isParticle": true},
+        {"furigana": "ほん", "kanji": "本", "romaji": "hon", "tooltip": "bok"},
+        {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
+        {"furigana": "よみます", "kanji": "読みます", "romaji": "yomimasu", "tooltip": "å lese", "verb": {"polite": "読みます (yomimasu)", "casual": "読む (yomu)"}}
+      ],
+      "answers": ["jeg leser bok på toget", "jeg leser en bok på toget", "jeg leser bøker på toget", "jeg leser i toget"]
+    },
+    {
+      "id": 6,
+      "words": [
+        {"furigana": "つぎ", "kanji": "次", "romaji": "tsugi", "tooltip": "neste"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "なんじ", "kanji": "何時", "romaji": "nanji", "tooltip": "hvilken tid, når"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
+        {"furigana": "か", "kanji": "か", "romaji": "ka", "tooltip": "[spørsmålspartikkel]", "isParticle": true}
+      ],
+      "answers": ["når går neste tog", "hva er klokka for neste tog", "hvilken tid går neste tog"]
+    },
+    {
+      "id": 7,
+      "words": [
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
+        {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
+        {"furigana": "おくれて", "kanji": "遅れて", "romaji": "okurete", "tooltip": "forsinket"},
+        {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er (tilstand)"}
+      ],
+      "answers": ["toget er forsinket", "tog er forsinket"]
+    },
+    {
+      "id": 8,
+      "words": [
+        {"furigana": "わたし", "kanji": "私", "romaji": "watashi", "tooltip": "jeg"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "まいあさ", "kanji": "毎朝", "romaji": "maiasa", "tooltip": "hver morgen"},
+        {"furigana": "ろくじ", "kanji": "六時", "romaji": "rokuji", "tooltip": "klokken seks"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[til/med]", "isParticle": true},
+        {"furigana": "のります", "kanji": "乗ります", "romaji": "norimasu", "tooltip": "å ta (transport)"}
+      ],
+      "answers": ["jeg tar toget klokken seks hver morgen", "jeg tar 6-toget hver morgen"]
+    },
+    {
+      "id": 9,
+      "words": [
+        {"furigana": "このでんしゃ", "kanji": "この電車", "romaji": "kono densha", "tooltip": "dette toget"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "とうきょうえき", "kanji": "東京駅", "romaji": "tookyoo eki", "tooltip": "Tokyo stasjon"},
+        {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[til]", "isParticle": true},
+        {"furigana": "とまります", "kanji": "止まります", "romaji": "tomarimasu", "tooltip": "å stoppe", "verb": {"polite": "止まります (tomarimasu)", "casual": "止まる (tomaru)"}}
+      ],
+      "answers": ["dette toget stopper på tokyo stasjon", "toget stopper ved tokyo stasjon"]
+    },
+    {
+      "id": 10,
+      "words": [
+        {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
+        {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},
+        {"furigana": "うんちん", "kanji": "運賃", "romaji": "unchin", "tooltip": "billettpris, fare"},
+        {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
+        {"furigana": "たかい", "kanji": "高い", "romaji": "takai", "tooltip": "dyr, høy"},
+        {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"}
+      ],
+      "answers": ["togbilletten er dyr", "prisen for toget er høy", "det er dyrt å ta toget"]
+    }
+  ]
+}

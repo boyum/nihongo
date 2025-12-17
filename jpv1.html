@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本の電車 - Japanske tog</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+          sans-serif;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+      }
+
+      .sentence {
+        margin: 25px 0;
+        font-size: 18px;
+      }
+
+      .word {
+        display: inline-block;
+        margin: 0 3px;
+        cursor: help;
+        position: relative;
+        vertical-align: top;
+      }
+
+      .furigana {
+        display: block;
+        font-size: 12px;
+        color: #e74c3c;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .kanji {
+        display: block;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .romaji {
+        display: block;
+        font-size: 11px;
+        color: #7f8c8d;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .tooltip {
+        visibility: hidden;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2c3e50;
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+        z-index: 1000;
+        margin-bottom: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        line-height: 1.5;
+      }
+
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #2c3e50;
+      }
+
+      .word:hover .tooltip {
+        visibility: visible;
+      }
+
+      .verb-forms {
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid #555;
+        font-size: 11px;
+      }
+
+      .context-forms {
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid #555;
+        font-size: 11px;
+        color: #a8d5ff;
+      }
+
+      .particle {
+        color: #27ae60;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>日本の電車 (にほんのでんしゃ) - Japanske tog</h1>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">わたし</span>
+          <span class="kanji">私</span>
+          <span class="romaji">watashi</span>
+          <span class="tooltip">
+            <strong>Jeg</strong><br />
+            Personlig pronomen (nøytralt/høflig)
+            <div class="context-forms">
+              Når du snakker: 私 (watashi)<br />
+              Uformelt: 僕 (boku) - gutt/mann<br />
+              Uformelt: 私 (atashi) - jente/kvinne
+            </div>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">は</span>
+          <span class="kanji particle">は</span>
+          <span class="romaji">wa</span>
+          <span class="tooltip">
+            <strong>[emne-partikkel]</strong><br />
+            Markerer subjektet i setningen
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">まいにち</span>
+          <span class="kanji">毎日</span>
+          <span class="romaji">mainichi</span>
+          <span class="tooltip">
+            <strong>hver dag</strong><br />
+            Tidsuttrykk - adverb
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">でんしゃ</span>
+          <span class="kanji">電車</span>
+          <span class="romaji">densha</span>
+          <span class="tooltip">
+            <strong>tog</strong> (elektrisk tog)<br />
+            Substantiv<br />
+            電 (den) = elektrisitet<br />
+            車 (sha) = vogn/kjøretøy
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">に</span>
+          <span class="kanji particle">に</span>
+          <span class="romaji">ni</span>
+          <span class="tooltip">
+            <strong>[til/med]</strong><br />
+            Partikkel som markerer retning eller middel
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">のります</span>
+          <span class="kanji">乗ります</span>
+          <span class="romaji">norimasu</span>
+          <span class="tooltip">
+            <strong>å ta (transport), å kjøre</strong>
+            <div class="verb-forms">
+              Høflig: 乗ります (norimasu)<br />
+              Uformell: 乗る (noru)<br />
+              Fortid: 乗りました (norimashita)<br />
+              Negativ: 乗りません (norimasen)
+            </div>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">でんしゃ</span>
+          <span class="kanji">電車</span>
+          <span class="romaji">densha</span>
+          <span class="tooltip"> <strong>tog</strong> (elektrisk tog) </span>
+        </span>
+        <span class="word">
+          <span class="furigana">は</span>
+          <span class="kanji particle">は</span>
+          <span class="romaji">wa</span>
+          <span class="tooltip">
+            <strong>[emne-partikkel]</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">はやい</span>
+          <span class="kanji">速い</span>
+          <span class="romaji">hayai</span>
+          <span class="tooltip">
+            <strong>rask, hurtig</strong><br />
+            i-adjektiv<br />
+            Fortid: 速かった (hayakatta)<br />
+            Negativ: 速くない (hayakunai)
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">です</span>
+          <span class="kanji">です</span>
+          <span class="romaji">desu</span>
+          <span class="tooltip">
+            <strong>er</strong><br />
+            Høflig kopula (være-verb)
+            <div class="verb-forms">
+              Høflig: です (desu)<br />
+              Uformell: だ (da)<br />
+              Fortid: でした (deshita)<br />
+              Negativ: ではありません (dewa arimasen)
+            </div>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">しんかんせん</span>
+          <span class="kanji">新幹線</span>
+          <span class="romaji">shinkansen</span>
+          <span class="tooltip">
+            <strong>shinkansen</strong> (lytoget)<br />
+            Japans høyhastighetstog<br />
+            新 (shin) = ny<br />
+            幹 (kan) = stamme/hovedlinje<br />
+            線 (sen) = linje
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">は</span>
+          <span class="kanji particle">は</span>
+          <span class="romaji">wa</span>
+          <span class="tooltip">
+            <strong>[emne-partikkel]</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">とても</span>
+          <span class="kanji">とても</span>
+          <span class="romaji">totemo</span>
+          <span class="tooltip">
+            <strong>veldig, svært</strong><br />
+            Adverb for forsterkning
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">はやい</span>
+          <span class="kanji">速い</span>
+          <span class="romaji">hayai</span>
+          <span class="tooltip">
+            <strong>rask, hurtig</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">です</span>
+          <span class="kanji">です</span>
+          <span class="romaji">desu</span>
+          <span class="tooltip">
+            <strong>er</strong>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">わたし</span>
+          <span class="kanji">私</span>
+          <span class="romaji">watashi</span>
+          <span class="tooltip">
+            <strong>jeg</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">は</span>
+          <span class="kanji particle">は</span>
+          <span class="romaji">wa</span>
+          <span class="tooltip">
+            <strong>[emne-partikkel]</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">とうきょう</span>
+          <span class="kanji">東京</span>
+          <span class="romaji">tookyoo</span>
+          <span class="tooltip">
+            <strong>Tokyo</strong><br />
+            Japans hovedstad<br />
+            東 (too) = øst<br />
+            京 (kyoo) = hovedstad
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">から</span>
+          <span class="kanji particle">から</span>
+          <span class="romaji">kara</span>
+          <span class="tooltip">
+            <strong>fra</strong><br />
+            Partikkel for utgangspunkt
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">おおさか</span>
+          <span class="kanji">大阪</span>
+          <span class="romaji">oosaka</span>
+          <span class="tooltip">
+            <strong>Osaka</strong><br />
+            Stor by i Japan<br />
+            大 (oo) = stor<br />
+            阪 (saka) = skråning
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">まで</span>
+          <span class="kanji particle">まで</span>
+          <span class="romaji">made</span>
+          <span class="tooltip">
+            <strong>til, helt til</strong><br />
+            Partikkel for endepunkt
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">いきます</span>
+          <span class="kanji">行きます</span>
+          <span class="romaji">ikimasu</span>
+          <span class="tooltip">
+            <strong>å gå, å reise</strong>
+            <div class="verb-forms">
+              Høflig: 行きます (ikimasu)<br />
+              Uformell: 行く (iku)<br />
+              Fortid: 行きました (ikimashita)<br />
+              Negativ: 行きません (ikimasen)<br />
+              -te form: 行って (itte)
+            </div>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">えき</span>
+          <span class="kanji">駅</span>
+          <span class="romaji">eki</span>
+          <span class="tooltip">
+            <strong>stasjon</strong> (togstasjon)<br />
+            Substantiv
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">で</span>
+          <span class="kanji particle">で</span>
+          <span class="romaji">de</span>
+          <span class="tooltip">
+            <strong>[på, ved, i]</strong><br />
+            Partikkel for sted hvor handling skjer
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">きっぷ</span>
+          <span class="kanji">切符</span>
+          <span class="romaji">kippu</span>
+          <span class="tooltip">
+            <strong>billett</strong><br />
+            Substantiv
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">を</span>
+          <span class="kanji particle">を</span>
+          <span class="romaji">o</span>
+          <span class="tooltip">
+            <strong>[objekt-partikkel]</strong><br />
+            Markerer det direkte objektet
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">かいます</span>
+          <span class="kanji">買います</span>
+          <span class="romaji">kaimasu</span>
+          <span class="tooltip">
+            <strong>å kjøpe</strong>
+            <div class="verb-forms">
+              Høflig: 買います (kaimasu)<br />
+              Uformell: 買う (kau)<br />
+              Fortid: 買いました (kaimashita)<br />
+              Negativ: 買いません (kaimasen)
+            </div>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">でんしゃ</span>
+          <span class="kanji">電車</span>
+          <span class="romaji">densha</span>
+          <span class="tooltip">
+            <strong>tog</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">の</span>
+          <span class="kanji particle">の</span>
+          <span class="romaji">no</span>
+          <span class="tooltip">
+            <strong>[eiendoms-partikkel]</strong><br />
+            Kobler substantiv (som "'s" på engelsk)
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">なか</span>
+          <span class="kanji">中</span>
+          <span class="romaji">naka</span>
+          <span class="tooltip">
+            <strong>inni, inne i</strong><br />
+            Substantiv for "innside"
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">で</span>
+          <span class="kanji particle">で</span>
+          <span class="romaji">de</span>
+          <span class="tooltip">
+            <strong>[i, på]</strong><br />
+            Sted hvor handling skjer
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">ほん</span>
+          <span class="kanji">本</span>
+          <span class="romaji">hon</span>
+          <span class="tooltip">
+            <strong>bok</strong><br />
+            Substantiv
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">を</span>
+          <span class="kanji particle">を</span>
+          <span class="romaji">o</span>
+          <span class="tooltip">
+            <strong>[objekt-partikkel]</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">よみます</span>
+          <span class="kanji">読みます</span>
+          <span class="romaji">yomimasu</span>
+          <span class="tooltip">
+            <strong>å lese</strong>
+            <div class="verb-forms">
+              Høflig: 読みます (yomimasu)<br />
+              Uformell: 読む (yomu)<br />
+              Fortid: 読みました (yomimashita)<br />
+              Negativ: 読みません (yomimasen)
+            </div>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">ひこうき</span>
+          <span class="kanji">飛行機</span>
+          <span class="romaji">hikooki</span>
+          <span class="tooltip">
+            <strong>fly</strong> (flyvemaskine)<br />
+            Substantiv<br />
+            飛 (hi) = å fly<br />
+            行 (kou) = å gå<br />
+            機 (ki) = maskin
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">は</span>
+          <span class="kanji particle">は</span>
+          <span class="romaji">wa</span>
+          <span class="tooltip">
+            <strong>[emne-partikkel]</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">でんしゃ</span>
+          <span class="kanji">電車</span>
+          <span class="romaji">densha</span>
+          <span class="tooltip">
+            <strong>tog</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">より</span>
+          <span class="kanji particle">より</span>
+          <span class="romaji">yori</span>
+          <span class="tooltip">
+            <strong>enn, sammenlignet med</strong><br />
+            Partikkel for sammenligning<br />
+            (A は B より... = A er mer ... enn B)
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">はやい</span>
+          <span class="kanji">速い</span>
+          <span class="romaji">hayai</span>
+          <span class="tooltip">
+            <strong>rask, hurtig</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">です</span>
+          <span class="kanji">です</span>
+          <span class="romaji">desu</span>
+          <span class="tooltip">
+            <strong>er</strong>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+
+      <div class="sentence">
+        <span class="word">
+          <span class="furigana">でも</span>
+          <span class="kanji">でも</span>
+          <span class="romaji">demo</span>
+          <span class="tooltip">
+            <strong>men, derimot</strong><br />
+            Konjunksjon<br />
+            Brukes i starten av setning
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">でんしゃ</span>
+          <span class="kanji">電車</span>
+          <span class="romaji">densha</span>
+          <span class="tooltip">
+            <strong>tog</strong>
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">が</span>
+          <span class="kanji particle">が</span>
+          <span class="romaji">ga</span>
+          <span class="tooltip">
+            <strong>[subjekt-partikkel]</strong><br />
+            Brukes ofte med すき (suki - å like)
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">すき</span>
+          <span class="kanji">好き</span>
+          <span class="romaji">suki</span>
+          <span class="tooltip">
+            <strong>å like, liker</strong><br />
+            na-adjektiv<br />
+            Bokstavelig: "å være glad i"<br />
+            Veldig glad: 大好き (daisuki)
+          </span>
+        </span>
+        <span class="word">
+          <span class="furigana">です</span>
+          <span class="kanji">です</span>
+          <span class="romaji">desu</span>
+          <span class="tooltip">
+            <strong>er</strong>
+          </span>
+        </span>
+        <span class="kanji">。</span>
+      </div>
+    </div>
+  </body>
+</html>

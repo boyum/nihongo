@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本語の練習 - Japansk øving</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+          sans-serif;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+      }
+
+      .category {
+        margin: 40px 0;
+      }
+
+      .category-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+
+      .category-header:hover {
+        opacity: 0.9;
+      }
+
+      .toggle-icon {
+        font-size: 24px;
+        transition: transform 0.3s;
+      }
+
+      .category.collapsed .toggle-icon {
+        transform: rotate(-90deg);
+      }
+
+      .category-content {
+        display: block;
+      }
+
+      .category.collapsed .category-content {
+        display: none;
+      }
+
+      .sentence-block {
+        margin: 25px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+      }
+
+      .sentence {
+        margin: 25px 0;
+        font-size: 18px;
+      }
+
+      .word {
+        display: inline-block;
+        margin: 0 3px;
+        cursor: help;
+        position: relative;
+        vertical-align: top;
+      }
+
+      .furigana {
+        display: block;
+        font-size: 12px;
+        color: #e74c3c;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .kanji {
+        display: block;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .romaji {
+        display: block;
+        font-size: 11px;
+        color: #7f8c8d;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .tooltip {
+        visibility: hidden;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2c3e50;
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+        z-index: 1000;
+        margin-bottom: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        line-height: 1.5;
+      }
+
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #2c3e50;
+      }
+
+      .word:hover .tooltip {
+        visibility: visible;
+      }
+
+      .verb-forms {
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid #555;
+        font-size: 11px;
+      }
+
+      .context-forms {
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid #555;
+        font-size: 11px;
+        color: #a8d5ff;
+      }
+
+      .particle {
+        color: #27ae60;
+        font-weight: bold;
+      }
+
+      .translation-input {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 15px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+          sans-serif;
+        transition: border-color 0.3s;
+      }
+
+      .translation-input:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+
+      .translation-input.correct {
+        border-color: #27ae60;
+        background-color: #d5f4e6;
+      }
+
+      .translation-input.almost {
+        border-color: #f39c12;
+        background-color: #fef5e7;
+      }
+
+      .translation-input.incorrect {
+        border-color: #e74c3c;
+        background-color: #fadbd8;
+      }
+
+      .feedback {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        display: none;
+      }
+
+      .feedback.show {
+        display: block;
+      }
+
+      .feedback.correct {
+        background-color: #d5f4e6;
+        color: #27ae60;
+        border: 1px solid #27ae60;
+      }
+
+      .feedback.almost {
+        background-color: #fef5e7;
+        color: #d68910;
+        border: 1px solid #f39c12;
+      }
+
+      .feedback.incorrect {
+        background-color: #fadbd8;
+        color: #c0392b;
+        border: 1px solid #e74c3c;
+      }
+
+      .progress-bar {
+        margin: 20px 0;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        height: 30px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+        transition: width 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>日本語の練習 (にほんごのれんしゅう) - Japansk øving</h1>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+
+      <!-- TOG -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🚆 Tog (電車)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg tar toget hver dag|jeg kjører tog hver dag|jeg reiser med tog hver dag"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip">
+                  <strong>Jeg</strong><br />
+                  Personlig pronomen (nøytralt/høflig)
+                  <div class="context-forms">
+                    Når du snakker: 私 (watashi)<br />
+                    Uformelt: 僕 (boku) - gutt/mann<br />
+                    Uformelt: 私 (atashi) - jente/kvinne
+                  </div>
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip">
+                  <strong>[emne-partikkel]</strong><br />
+                  Markerer subjektet i setningen
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">まいにち</span>
+                <span class="kanji">毎日</span>
+                <span class="romaji">mainichi</span>
+                <span class="tooltip">
+                  <strong>hver dag</strong><br />
+                  Tidsuttrykk - adverb
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">でんしゃ</span>
+                <span class="kanji">電車</span>
+                <span class="romaji">densha</span>
+                <span class="tooltip">
+                  <strong>tog</strong> (elektrisk tog)<br />
+                  Substantiv<br />
+                  電 (den) = elektrisitet<br />
+                  車 (sha) = vogn/kjøretøy
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">に</span>
+                <span class="kanji particle">に</span>
+                <span class="romaji">ni</span>
+                <span class="tooltip">
+                  <strong>[til/med]</strong><br />
+                  Partikkel som markerer retning eller middel
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">のります</span>
+                <span class="kanji">乗ります</span>
+                <span class="romaji">norimasu</span>
+                <span class="tooltip">
+                  <strong>å ta (transport), å kjøre</strong>
+                  <div class="verb-forms">
+                    Høflig: 乗ります (norimasu)<br />
+                    Uformell: 乗る (noru)<br />
+                    Fortid: 乗りました (norimashita)<br />
+                    Negativ: 乗りません (norimasen)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="toget er raskt|toget er hurtig|tog er raskt|tog er hurtige"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">でんしゃ</span>
+                <span class="kanji">電車</span>
+                <span class="romaji">densha</span>
+                <span class="tooltip"><strong>tog</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">はやい</span>
+                <span class="kanji">速い</span>
+                <span class="romaji">hayai</span>
+                <span class="tooltip"><strong>rask, hurtig</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="shinkansen er veldig rask|shinkansen er veldig hurtig|lytoget er veldig raskt"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">しんかんせん</span>
+                <span class="kanji">新幹線</span>
+                <span class="romaji">shinkansen</span>
+                <span class="tooltip"
+                  ><strong>shinkansen</strong> (lytoget)</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">とても</span>
+                <span class="kanji">とても</span>
+                <span class="romaji">totemo</span>
+                <span class="tooltip"><strong>veldig, svært</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">はやい</span>
+                <span class="kanji">速い</span>
+                <span class="romaji">hayai</span>
+                <span class="tooltip"><strong>rask, hurtig</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg kjøper billett på stasjonen|jeg kjøper en billett på stasjonen"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">えき</span>
+                <span class="kanji">駅</span>
+                <span class="romaji">eki</span>
+                <span class="tooltip"><strong>stasjon</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">で</span>
+                <span class="kanji particle">で</span>
+                <span class="romaji">de</span>
+                <span class="tooltip"><strong>[på, ved, i]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">きっぷ</span>
+                <span class="kanji">切符</span>
+                <span class="romaji">kippu</span>
+                <span class="tooltip"><strong>billett</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">を</span>
+                <span class="kanji particle">を</span>
+                <span class="romaji">o</span>
+                <span class="tooltip"><strong>[objekt-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">かいます</span>
+                <span class="kanji">買います</span>
+                <span class="romaji">kaimasu</span>
+                <span class="tooltip">
+                  <strong>å kjøpe</strong>
+                  <div class="verb-forms">
+                    Høflig: 買います (kaimasu)<br />
+                    Uformell: 買う (kau)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEG SELV -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>👤 Meg selv (自己紹介)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg heter|jeg het|jeg heit|navnet mitt er"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">シンドレ</span>
+                <span class="romaji">shindore</span>
+                <span class="tooltip"
+                  ><strong>Sindre</strong> (navn i katakana)</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg er norsk|jeg er fra norge"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">ノルウェー</span>
+                <span class="romaji">noruwe</span>
+                <span class="tooltip"><strong>Norge</strong> (land)</span>
+              </span>
+              <span class="word">
+                <span class="furigana">じん</span>
+                <span class="kanji">人</span>
+                <span class="romaji">jin</span>
+                <span class="tooltip"
+                  ><strong>person, -sk</strong><br />Suffiks for
+                  nasjonalitet</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg er 30 år gammel|jeg er tretti år"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">さんじゅっ</span>
+                <span class="kanji">三十</span>
+                <span class="romaji">sanjuu</span>
+                <span class="tooltip"
+                  ><strong>30</strong><br />三 (san) = 3, 十 (juu) = 10</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">さい</span>
+                <span class="kanji">歳</span>
+                <span class="romaji">sai</span>
+                <span class="tooltip"><strong>år (alder)</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAGLIGE RUTINER -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>⏰ Daglige rutiner (日常)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg står opp klokken syv|jeg våkner klokken syv|jeg står opp kl syv"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">しち</span>
+                <span class="kanji">七</span>
+                <span class="romaji">shichi</span>
+                <span class="tooltip"><strong>syv (7)</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">じ</span>
+                <span class="kanji">時</span>
+                <span class="romaji">ji</span>
+                <span class="tooltip"><strong>o'clock, time</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">に</span>
+                <span class="kanji particle">に</span>
+                <span class="romaji">ni</span>
+                <span class="tooltip"
+                  ><strong>[på, ved]</strong><br />Tid-partikkel</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">おきます</span>
+                <span class="kanji">起きます</span>
+                <span class="romaji">okimasu</span>
+                <span class="tooltip">
+                  <strong>å stå opp, våkne</strong>
+                  <div class="verb-forms">
+                    Høflig: 起きます (okimasu)<br />
+                    Uformell: 起きる (okiru)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg spiser frokost|jeg spiser morgenmåltid"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">あさ</span>
+                <span class="kanji">朝</span>
+                <span class="romaji">asa</span>
+                <span class="tooltip"><strong>morgen</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">ごはん</span>
+                <span class="kanji">ご飯</span>
+                <span class="romaji">gohan</span>
+                <span class="tooltip"
+                  ><strong>måltid, ris</strong><br />朝ご飯 = frokost</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">を</span>
+                <span class="kanji particle">を</span>
+                <span class="romaji">o</span>
+                <span class="tooltip"><strong>[objekt-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">たべます</span>
+                <span class="kanji">食べます</span>
+                <span class="romaji">tabemasu</span>
+                <span class="tooltip">
+                  <strong>å spise</strong>
+                  <div class="verb-forms">
+                    Høflig: 食べます (tabemasu)<br />
+                    Uformell: 食べる (taberu)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg legger meg klokken elleve|jeg går og legger meg kl elleve|jeg sover klokken elleve"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">じゅういち</span>
+                <span class="kanji">十一</span>
+                <span class="romaji">juuichi</span>
+                <span class="tooltip"><strong>elleve (11)</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">じ</span>
+                <span class="kanji">時</span>
+                <span class="romaji">ji</span>
+                <span class="tooltip"><strong>o'clock</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">に</span>
+                <span class="kanji particle">に</span>
+                <span class="romaji">ni</span>
+                <span class="tooltip"><strong>[på, ved]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">ねます</span>
+                <span class="kanji">寝ます</span>
+                <span class="romaji">nemasu</span>
+                <span class="tooltip">
+                  <strong>å legge seg, å sove</strong>
+                  <div class="verb-forms">
+                    Høflig: 寝ます (nemasu)<br />
+                    Uformell: 寝る (neru)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAT -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🍜 Mat (食べ物)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg liker sushi|jeg liker å spise sushi"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">すし</span>
+                <span class="romaji">sushi</span>
+                <span class="tooltip"><strong>sushi</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">が</span>
+                <span class="kanji particle">が</span>
+                <span class="romaji">ga</span>
+                <span class="tooltip"
+                  ><strong>[subjekt-partikkel]</strong></span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">すき</span>
+                <span class="kanji">好き</span>
+                <span class="romaji">suki</span>
+                <span class="tooltip"><strong>å like</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg spiser ramen hver uke|jeg spiser ramen ukentlig"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">まいしゅう</span>
+                <span class="kanji">毎週</span>
+                <span class="romaji">maishuu</span>
+                <span class="tooltip"><strong>hver uke</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">ラーメン</span>
+                <span class="romaji">raamen</span>
+                <span class="tooltip"><strong>ramen</strong> (nudelsuppe)</span>
+              </span>
+              <span class="word">
+                <span class="furigana">を</span>
+                <span class="kanji particle">を</span>
+                <span class="romaji">o</span>
+                <span class="tooltip"><strong>[objekt-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">たべます</span>
+                <span class="kanji">食べます</span>
+                <span class="romaji">tabemasu</span>
+                <span class="tooltip"><strong>å spise</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg drikker kaffe om morgenen|jeg drikker kaffe på morgenen"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">あさ</span>
+                <span class="kanji">朝</span>
+                <span class="romaji">asa</span>
+                <span class="tooltip"><strong>morgen</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">コーヒー</span>
+                <span class="romaji">koohii</span>
+                <span class="tooltip"><strong>kaffe</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">を</span>
+                <span class="kanji particle">を</span>
+                <span class="romaji">o</span>
+                <span class="tooltip"><strong>[objekt-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">のみます</span>
+                <span class="kanji">飲みます</span>
+                <span class="romaji">nomimasu</span>
+                <span class="tooltip">
+                  <strong>å drikke</strong>
+                  <div class="verb-forms">
+                    Høflig: 飲みます (nomimasu)<br />
+                    Uformell: 飲む (nomu)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAMILIE -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>👨‍👩‍👧‍👦 Familie (家族)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="min mor er lærer|moren min er lærer|mora mi er lærer"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">の</span>
+                <span class="kanji particle">の</span>
+                <span class="romaji">no</span>
+                <span class="tooltip"
+                  ><strong>[eiendoms-partikkel]</strong></span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">はは</span>
+                <span class="kanji">母</span>
+                <span class="romaji">haha</span>
+                <span class="tooltip">
+                  <strong>mor (min)</strong>
+                  <div class="context-forms">
+                    Min mor: 母 (haha)<br />
+                    Din mor: お母さん (okaasan)
+                  </div>
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">せんせい</span>
+                <span class="kanji">先生</span>
+                <span class="romaji">sensei</span>
+                <span class="tooltip"><strong>lærer</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="min far jobber på et sykehus|faren min jobber på sykehus"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">の</span>
+                <span class="kanji particle">の</span>
+                <span class="romaji">no</span>
+                <span class="tooltip"
+                  ><strong>[eiendoms-partikkel]</strong></span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">ちち</span>
+                <span class="kanji">父</span>
+                <span class="romaji">chichi</span>
+                <span class="tooltip">
+                  <strong>far (min)</strong>
+                  <div class="context-forms">
+                    Min far: 父 (chichi)<br />
+                    Din far: お父さん (otousan)
+                  </div>
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">びょういん</span>
+                <span class="kanji">病院</span>
+                <span class="romaji">byouin</span>
+                <span class="tooltip"><strong>sykehus</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">で</span>
+                <span class="kanji particle">で</span>
+                <span class="romaji">de</span>
+                <span class="tooltip"><strong>[på, ved]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">はたらきます</span>
+                <span class="kanji">働きます</span>
+                <span class="romaji">hatarakimasu</span>
+                <span class="tooltip">
+                  <strong>å jobbe, å arbeide</strong>
+                  <div class="verb-forms">
+                    Høflig: 働きます (hatarakimasu)<br />
+                    Uformell: 働く (hataraku)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg har en bror|jeg har en storebror"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">あに</span>
+                <span class="kanji">兄</span>
+                <span class="romaji">ani</span>
+                <span class="tooltip">
+                  <strong>storebror (min)</strong>
+                  <div class="context-forms">
+                    Min storebror: 兄 (ani)<br />
+                    Din storebror: お兄さん (oniisan)
+                  </div>
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">が</span>
+                <span class="kanji particle">が</span>
+                <span class="romaji">ga</span>
+                <span class="tooltip"
+                  ><strong>[subjekt-partikkel]</strong></span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">います</span>
+                <span class="kanji">います</span>
+                <span class="romaji">imasu</span>
+                <span class="tooltip">
+                  <strong>å ha, å være (levende)</strong>
+                  <div class="verb-forms">
+                    Høflig: います (imasu)<br />
+                    Uformell: いる (iru)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIROSHIMA -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🏯 Hiroshima (広島)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="hiroshima er en vakker by|hiroshima er en fin by"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">ひろしま</span>
+                <span class="kanji">広島</span>
+                <span class="romaji">hiroshima</span>
+                <span class="tooltip"
+                  ><strong>Hiroshima</strong><br />By i Japan</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">きれい</span>
+                <span class="kanji">きれい</span>
+                <span class="romaji">kirei</span>
+                <span class="tooltip"
+                  ><strong>vakker, pen</strong><br />na-adjektiv</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">な</span>
+                <span class="kanji particle">な</span>
+                <span class="romaji">na</span>
+                <span class="tooltip"
+                  ><strong>[na-adjektiv kobling]</strong></span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">まち</span>
+                <span class="kanji">町</span>
+                <span class="romaji">machi</span>
+                <span class="tooltip"><strong>by</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg vil dra til hiroshima|jeg ønsker å reise til hiroshima"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">ひろしま</span>
+                <span class="kanji">広島</span>
+                <span class="romaji">hiroshima</span>
+                <span class="tooltip"><strong>Hiroshima</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">に</span>
+                <span class="kanji particle">に</span>
+                <span class="romaji">ni</span>
+                <span class="tooltip"><strong>[til]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">いきたい</span>
+                <span class="kanji">行きたい</span>
+                <span class="romaji">ikitai</span>
+                <span class="tooltip">
+                  <strong>vil gå, ønsker å gå</strong>
+                  <div class="verb-forms">
+                    -たい form = "vil/ønsker å"<br />
+                    行く (iku) → 行きたい (ikitai)
+                  </div>
+                </span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITALIA -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🇮🇹 Italia (イタリア)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg har vært i italia|jeg har reist til italia|jeg har besøkt italia"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">イタリア</span>
+                <span class="romaji">itaria</span>
+                <span class="tooltip"><strong>Italia</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">に</span>
+                <span class="kanji particle">に</span>
+                <span class="romaji">ni</span>
+                <span class="tooltip"><strong>[til]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">いきました</span>
+                <span class="kanji">行きました</span>
+                <span class="romaji">ikimashita</span>
+                <span class="tooltip">
+                  <strong>gikk, dro (fortid)</strong>
+                  <div class="verb-forms">
+                    Presens: 行きます (ikimasu)<br />
+                    Fortid: 行きました (ikimashita)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="italiensk mat er deilig|italiensk mat er velsmakende"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">イタリア</span>
+                <span class="romaji">itaria</span>
+                <span class="tooltip"><strong>Italia</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">の</span>
+                <span class="kanji particle">の</span>
+                <span class="romaji">no</span>
+                <span class="tooltip"
+                  ><strong>[eiendoms-partikkel]</strong></span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">りょうり</span>
+                <span class="kanji">料理</span>
+                <span class="romaji">ryouri</span>
+                <span class="tooltip"><strong>mat, matlaging</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">おいしい</span>
+                <span class="kanji">美味しい</span>
+                <span class="romaji">oishii</span>
+                <span class="tooltip"
+                  ><strong>deilig, velsmakende</strong><br />i-adjektiv</span
+                >
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HJEMME -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>🏠 Hjemme (家)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg er hjemme nå|jeg er hjemme akkurat nå"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">いま</span>
+                <span class="kanji">今</span>
+                <span class="romaji">ima</span>
+                <span class="tooltip"><strong>nå</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">うち</span>
+                <span class="kanji">家</span>
+                <span class="romaji">uchi</span>
+                <span class="tooltip"><strong>hjem, hus</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">に</span>
+                <span class="kanji particle">に</span>
+                <span class="romaji">ni</span>
+                <span class="tooltip"><strong>[i, på]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">います</span>
+                <span class="kanji">います</span>
+                <span class="romaji">imasu</span>
+                <span class="tooltip"
+                  ><strong>å være (for levende ting)</strong></span
+                >
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg ser på tv hjemme|jeg ser på fjernsyn hjemme"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">うち</span>
+                <span class="kanji">家</span>
+                <span class="romaji">uchi</span>
+                <span class="tooltip"><strong>hjem</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">で</span>
+                <span class="kanji particle">で</span>
+                <span class="romaji">de</span>
+                <span class="tooltip"><strong>[på, i]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">テレビ</span>
+                <span class="romaji">terebi</span>
+                <span class="tooltip"><strong>TV, fjernsyn</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">を</span>
+                <span class="kanji particle">を</span>
+                <span class="romaji">o</span>
+                <span class="tooltip"><strong>[objekt-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">みます</span>
+                <span class="kanji">見ます</span>
+                <span class="romaji">mimasu</span>
+                <span class="tooltip">
+                  <strong>å se</strong>
+                  <div class="verb-forms">
+                    Høflig: 見ます (mimasu)<br />
+                    Uformell: 見る (miru)
+                  </div>
+                </span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOBB -->
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)">
+          <span>💼 Jobb (仕事)</span>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="category-content">
+          <div
+            class="sentence-block"
+            data-answer="jeg jobber på et kontor|jeg arbeider på kontor"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">オフィス</span>
+                <span class="romaji">ofisu</span>
+                <span class="tooltip"><strong>kontor</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">で</span>
+                <span class="kanji particle">で</span>
+                <span class="romaji">de</span>
+                <span class="tooltip"><strong>[på, ved]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">はたらきます</span>
+                <span class="kanji">働きます</span>
+                <span class="romaji">hatarakimasu</span>
+                <span class="tooltip"><strong>å jobbe</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+
+          <div
+            class="sentence-block"
+            data-answer="jeg er programmerer|jeg er utvikler"
+          >
+            <div class="sentence">
+              <span class="word">
+                <span class="furigana">わたし</span>
+                <span class="kanji">私</span>
+                <span class="romaji">watashi</span>
+                <span class="tooltip"><strong>jeg</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">は</span>
+                <span class="kanji particle">は</span>
+                <span class="romaji">wa</span>
+                <span class="tooltip"><strong>[emne-partikkel]</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana"></span>
+                <span class="kanji">プログラマー</span>
+                <span class="romaji">puroguramaa</span>
+                <span class="tooltip"><strong>programmerer</strong></span>
+              </span>
+              <span class="word">
+                <span class="furigana">です</span>
+                <span class="kanji">です</span>
+                <span class="romaji">desu</span>
+                <span class="tooltip"><strong>er</strong></span>
+              </span>
+              <span class="kanji">。</span>
+            </div>
+            <input
+              type="text"
+              class="translation-input"
+              placeholder="Skriv hva denne setningen betyr på norsk..."
+            />
+            <div class="feedback"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Levenshtein distance algoritme
+      function levenshteinDistance(str1, str2) {
+        const len1 = str1.length;
+        const len2 = str2.length;
+        const matrix = [];
+
+        for (let i = 0; i <= len1; i++) {
+          matrix[i] = [i];
+        }
+
+        for (let j = 0; j <= len2; j++) {
+          matrix[0][j] = j;
+        }
+
+        for (let i = 1; i <= len1; i++) {
+          for (let j = 1; j <= len2; j++) {
+            if (str1.charAt(i - 1) === str2.charAt(j - 1)) {
+              matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+              matrix[i][j] = Math.min(
+                matrix[i - 1][j - 1] + 1,
+                matrix[i][j - 1] + 1,
+                matrix[i - 1][j] + 1,
+              );
+            }
+          }
+        }
+
+        return matrix[len1][len2];
+      }
+
+      // Normaliser tekst
+      function normalizeText(text) {
+        return text
+          .toLowerCase()
+          .trim()
+          .replace(/[.,!?;:]/g, "")
+          .replace(/\s+/g, " ")
+          .replace(/å/g, "a")
+          .replace(/æ/g, "ae")
+          .replace(/ø/g, "o");
+      }
+
+      // Toggle kategori
+      function toggleCategory(header) {
+        const category = header.parentElement;
+        category.classList.toggle("collapsed");
+      }
+
+      // Sjekk svar
+      function checkAnswer(userAnswer, correctAnswers) {
+        const normalizedUser = normalizeText(userAnswer);
+
+        if (normalizedUser.length === 0) {
+          return { score: 0, type: "empty" };
+        }
+
+        let bestScore = 0;
+        let bestMatch = "";
+
+        correctAnswers.forEach((correctAnswer) => {
+          const normalizedCorrect = normalizeText(correctAnswer);
+
+          if (normalizedUser === normalizedCorrect) {
+            bestScore = 1.0;
+            bestMatch = correctAnswer;
+            return;
+          }
+
+          if (
+            normalizedUser.includes(normalizedCorrect) ||
+            normalizedCorrect.includes(normalizedUser)
+          ) {
+            const score = 0.85;
+            if (score > bestScore) {
+              bestScore = score;
+              bestMatch = correctAnswer;
+            }
+          }
+
+          const distance = levenshteinDistance(
+            normalizedUser,
+            normalizedCorrect,
+          );
+          const maxLen = Math.max(
+            normalizedUser.length,
+            normalizedCorrect.length,
+          );
+          const similarity = 1 - distance / maxLen;
+
+          if (similarity > bestScore) {
+            bestScore = similarity;
+            bestMatch = correctAnswer;
+          }
+        });
+
+        let type;
+        if (bestScore >= 0.9) {
+          type = "correct";
+        } else if (bestScore >= 0.7) {
+          type = "almost";
+        } else {
+          type = "incorrect";
+        }
+
+        return { score: bestScore, type: type, bestMatch: bestMatch };
+      }
+
+      // Oppdater progress bar
+      function updateProgress() {
+        const allInputs = document.querySelectorAll(".translation-input");
+        const correctInputs = document.querySelectorAll(
+          ".translation-input.correct",
+        );
+        const progressBar = document.getElementById("progressBar");
+        const percentage =
+          allInputs.length > 0
+            ? Math.round((correctInputs.length / allInputs.length) * 100)
+            : 0;
+        progressBar.style.width = `${percentage}%`;
+      }
+
+      // Håndter alle input-felt
+      document.querySelectorAll(".sentence-block").forEach((block) => {
+        const input = block.querySelector(".translation-input");
+        const feedback = block.querySelector(".feedback");
+        const correctAnswersStr = block.getAttribute("data-answer");
+        const correctAnswers = correctAnswersStr.split("|");
+
+        input.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+            checkUserAnswer();
+          }
+        });
+
+        input.addEventListener("input", () => {
+          input.classList.remove("correct", "almost", "incorrect");
+          feedback.classList.remove("show", "correct", "almost", "incorrect");
+        });
+
+        function checkUserAnswer() {
+          const userAnswer = input.value;
+          const result = checkAnswer(userAnswer, correctAnswers);
+
+          input.classList.remove("correct", "almost", "incorrect");
+          feedback.classList.remove("show", "correct", "almost", "incorrect");
+
+          if (result.type === "empty") {
+            return;
+          }
+
+          input.classList.add(result.type);
+          feedback.classList.add("show", result.type);
+
+          if (result.type === "correct") {
+            feedback.innerHTML = "✓ Riktig! Veldig bra!";
+          } else if (result.type === "almost") {
+            feedback.innerHTML = `≈ Nesten riktig! Du er på rett spor.<br><small>Et eksempel på korrekt svar: "${result.bestMatch}"</small>`;
+          } else {
+            feedback.innerHTML = `✗ Ikke helt riktig.<br><small>Riktig svar: "${result.bestMatch}"</small>`;
+          }
+
+          updateProgress();
+        }
+      });
+
+      // Initialiser progress bar
+      updateProgress();
+    </script>
+  </body>
+</html>

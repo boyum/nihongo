@@ -1,0 +1,461 @@
+---
+import togData from '../data/tog.json';
+import megSelvData from '../data/meg-selv.json';
+import dagligeRutinerData from '../data/daglige-rutiner.json';
+
+const categories = [togData, megSelvData, dagligeRutinerData];
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本語の練習 - Japansk øving</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+      }
+
+      .category {
+        margin: 40px 0;
+      }
+
+      .category-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+
+      .category-header:hover {
+        opacity: 0.9;
+      }
+
+      .toggle-icon {
+        font-size: 24px;
+        transition: transform 0.3s;
+      }
+
+      .category.collapsed .toggle-icon {
+        transform: rotate(-90deg);
+      }
+
+      .category-content {
+        display: block;
+      }
+
+      .category.collapsed .category-content {
+        display: none;
+      }
+
+      .sentence-block {
+        margin: 25px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+      }
+
+      .sentence {
+        margin: 25px 0;
+        font-size: 18px;
+      }
+
+      .word {
+        display: inline-block;
+        margin: 0 3px;
+        cursor: help;
+        position: relative;
+        vertical-align: top;
+      }
+
+      .furigana {
+        display: block;
+        font-size: 12px;
+        color: #e74c3c;
+        text-align: center;
+        line-height: 1.2;
+        min-height: 14.4px;
+      }
+
+      .kanji {
+        display: block;
+        font-size: 24px;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .romaji {
+        display: block;
+        font-size: 11px;
+        color: #7f8c8d;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .tooltip {
+        visibility: hidden;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2c3e50;
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: nowrap;
+        z-index: 1000;
+        margin-bottom: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        line-height: 1.5;
+      }
+
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #2c3e50;
+      }
+
+      .word:hover .tooltip {
+        visibility: visible;
+      }
+
+      .particle {
+        color: #27ae60;
+        font-weight: bold;
+      }
+
+      .translation-input {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 15px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        transition: border-color 0.3s;
+      }
+
+      .translation-input:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+
+      .translation-input.correct {
+        border-color: #27ae60;
+        background-color: #d5f4e6;
+      }
+
+      .translation-input.almost {
+        border-color: #f39c12;
+        background-color: #fef5e7;
+      }
+
+      .translation-input.incorrect {
+        border-color: #e74c3c;
+        background-color: #fadbd8;
+      }
+
+      .feedback {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        display: none;
+      }
+
+      .feedback.show {
+        display: block;
+      }
+
+      .feedback.correct {
+        background-color: #d5f4e6;
+        color: #27ae60;
+        border: 1px solid #27ae60;
+      }
+
+      .feedback.almost {
+        background-color: #fef5e7;
+        color: #d68910;
+        border: 1px solid #f39c12;
+      }
+
+      .feedback.incorrect {
+        background-color: #fadbd8;
+        color: #c0392b;
+        border: 1px solid #e74c3c;
+      }
+
+      .progress-bar {
+        margin: 20px 0;
+        background-color: #ecf0f1;
+        border-radius: 10px;
+        height: 30px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+        transition: width 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>日本語の練習 (にほんごのれんしゅう) - Japansk øving</h1>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+
+      {categories.map((category) => (
+        <div class="category">
+          <div class="category-header" onclick="toggleCategory(this)">
+            <span>{category.emoji} {category.categoryName} ({category.categoryNameJapanese})</span>
+            <span class="toggle-icon">▼</span>
+          </div>
+          <div class="category-content">
+            {category.sentences.map((sentence) => (
+              <div class="sentence-block" data-answer={sentence.answers.join('|')}>
+                <div class="sentence">
+                  {sentence.words.map((word) => (
+                    <span class={word.isParticle ? 'word' : 'word'}>
+                      <span class="furigana">{word.furigana}</span>
+                      <span class={word.isParticle ? 'kanji particle' : 'kanji'}>{word.kanji}</span>
+                      <span class="romaji">{word.romaji}</span>
+                      <span class="tooltip" set:html={word.tooltip}></span>
+                    </span>
+                  ))}
+                  <span class="kanji">。</span>
+                </div>
+                <input type="text" class="translation-input" placeholder="Skriv hva denne setningen betyr på norsk..." />
+                <div class="feedback"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <script>
+      // Levenshtein distance algoritme
+      function levenshteinDistance(str1: string, str2: string): number {
+        const len1 = str1.length;
+        const len2 = str2.length;
+        const matrix: number[][] = [];
+
+        for (let i = 0; i <= len1; i++) {
+          matrix[i] = [i];
+        }
+
+        for (let j = 0; j <= len2; j++) {
+          matrix[0][j] = j;
+        }
+
+        for (let i = 1; i <= len1; i++) {
+          for (let j = 1; j <= len2; j++) {
+            if (str1.charAt(i - 1) === str2.charAt(j - 1)) {
+              matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+              matrix[i][j] = Math.min(
+                matrix[i - 1][j - 1] + 1,
+                matrix[i][j - 1] + 1,
+                matrix[i - 1][j] + 1,
+              );
+            }
+          }
+        }
+
+        return matrix[len1][len2];
+      }
+
+      // Normaliser tekst
+      function normalizeText(text: string): string {
+        return text
+          .toLowerCase()
+          .trim()
+          .replace(/[.,!?;:]/g, "")
+          .replace(/\s+/g, " ")
+          .replace(/å/g, "a")
+          .replace(/æ/g, "ae")
+          .replace(/ø/g, "o");
+      }
+
+      // Sjekk svar
+      function checkAnswer(userAnswer: string, correctAnswers: string[]): { score: number; type: string; bestMatch: string } {
+        const normalizedUser = normalizeText(userAnswer);
+
+        if (normalizedUser.length === 0) {
+          return { score: 0, type: "empty", bestMatch: "" };
+        }
+
+        let bestScore = 0;
+        let bestMatch = "";
+
+        correctAnswers.forEach((correctAnswer) => {
+          const normalizedCorrect = normalizeText(correctAnswer);
+
+          if (normalizedUser === normalizedCorrect) {
+            bestScore = 1.0;
+            bestMatch = correctAnswer;
+            return;
+          }
+
+          if (
+            normalizedUser.includes(normalizedCorrect) ||
+            normalizedCorrect.includes(normalizedUser)
+          ) {
+            const score = 0.85;
+            if (score > bestScore) {
+              bestScore = score;
+              bestMatch = correctAnswer;
+            }
+          }
+
+          const distance = levenshteinDistance(
+            normalizedUser,
+            normalizedCorrect,
+          );
+          const maxLen = Math.max(
+            normalizedUser.length,
+            normalizedCorrect.length,
+          );
+          const similarity = 1 - distance / maxLen;
+
+          if (similarity > bestScore) {
+            bestScore = similarity;
+            bestMatch = correctAnswer;
+          }
+        });
+
+        let type: string;
+        if (bestScore >= 0.9) {
+          type = "correct";
+        } else if (bestScore >= 0.7) {
+          type = "almost";
+        } else {
+          type = "incorrect";
+        }
+
+        return { score: bestScore, type: type, bestMatch: bestMatch };
+      }
+
+      // Toggle kategori
+      function toggleCategory(header: HTMLElement): void {
+        const category = header.parentElement;
+        category?.classList.toggle("collapsed");
+      }
+
+      // Oppdater progress bar
+      function updateProgress(): void {
+        const allInputs = document.querySelectorAll(".translation-input");
+        const correctInputs = document.querySelectorAll(
+          ".translation-input.correct",
+        );
+        const progressBar = document.getElementById("progressBar");
+        const percentage =
+          allInputs.length > 0
+            ? Math.round((correctInputs.length / allInputs.length) * 100)
+            : 0;
+        if (progressBar) {
+          progressBar.style.width = `${percentage}%`;
+          progressBar.textContent = `${correctInputs.length} / ${allInputs.length}`;
+        }
+      }
+
+      // Håndter alle input-felt
+      document.querySelectorAll(".sentence-block").forEach((block) => {
+        const input = block.querySelector(".translation-input") as HTMLInputElement;
+        const feedback = block.querySelector(".feedback") as HTMLElement;
+        const correctAnswersStr = block.getAttribute("data-answer") || "";
+        const correctAnswers = correctAnswersStr.split("|");
+
+        input.addEventListener("keypress", (e: KeyboardEvent) => {
+          if (e.key === "Enter") {
+            checkUserAnswer();
+          }
+        });
+
+        input.addEventListener("input", () => {
+          input.classList.remove("correct", "almost", "incorrect");
+          feedback.classList.remove("show", "correct", "almost", "incorrect");
+        });
+
+        function checkUserAnswer(): void {
+          const userAnswer = input.value;
+          const result = checkAnswer(userAnswer, correctAnswers);
+
+          input.classList.remove("correct", "almost", "incorrect");
+          feedback.classList.remove("show", "correct", "almost", "incorrect");
+
+          if (result.type === "empty") {
+            return;
+          }
+
+          input.classList.add(result.type);
+          feedback.classList.add("show", result.type);
+
+          if (result.type === "correct") {
+            feedback.innerHTML = "✓ Riktig! Veldig bra!";
+          } else if (result.type === "almost") {
+            feedback.innerHTML = `≈ Nesten riktig! Du er på rett spor.<br><small>Et eksempel på korrekt svar: "${result.bestMatch}"</small>`;
+          } else {
+            feedback.innerHTML = `✗ Ikke helt riktig.<br><small>Riktig svar: "${result.bestMatch}"</small>`;
+          }
+
+          updateProgress();
+        }
+      });
+
+      // Initialiser progress bar
+      updateProgress();
+
+      // Make toggleCategory available globally
+      (window as any).toggleCategory = toggleCategory;
+    </script>
+  </body>
+</html>
