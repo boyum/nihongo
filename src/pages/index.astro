@@ -187,9 +187,67 @@ const categories = [megSelvGenerated, matGenerated, tog, italiaGenerated, hirosh
         border-left: 4px solid #3498db;
       }
 
+      .sentence-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
       .sentence {
         margin: 25px 0;
         font-size: 18px;
+        flex: 1;
+      }
+
+      .play-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #3498db;
+        transition: all 0.2s;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+
+      .play-btn:hover {
+        color: #2980b9;
+        background-color: rgba(52, 152, 219, 0.1);
+      }
+
+      .play-btn:active {
+        transform: scale(0.95);
+      }
+
+      .play-btn.playing {
+        color: #e74c3c;
+        animation: pulse 1s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      .play-sentence {
+        margin-top: 25px;
+      }
+
+      .play-word {
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      .word:hover .play-word {
+        opacity: 1;
       }
 
       .word {
@@ -395,16 +453,28 @@ const categories = [megSelvGenerated, matGenerated, tog, italiaGenerated, hirosh
           <div class="category-content">
             {category.sentences.map((sentence) => (
               <div class="sentence-block" data-answer={sentence.answers.join('|')}>
-                <div class="sentence">
-                  {sentence.words.map((word) => (
-                    <span class={word.isParticle ? 'word' : 'word'}>
-                      <span class="furigana">{word.furigana}</span>
-                      <span class={word.isParticle ? 'kanji particle' : 'kanji'}>{word.kanji}</span>
-                      <span class="romaji">{word.romaji}</span>
-                      <span class="tooltip" set:html={word.tooltip}></span>
-                    </span>
-                  ))}
-                  <span class="kanji">。</span>
+                <div class="sentence-header">
+                  <button class="play-btn play-sentence" title="Spill av hele setningen">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </button>
+                  <div class="sentence">
+                    {sentence.words.map((word) => (
+                      <span class={word.isParticle ? 'word' : 'word'}>
+                        <button class="play-btn play-word" data-text={word.kanji} title={`Spill av: ${word.romaji}`}>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </button>
+                        <span class="furigana">{word.furigana}</span>
+                        <span class={word.isParticle ? 'kanji particle' : 'kanji'}>{word.kanji}</span>
+                        <span class="romaji">{word.romaji}</span>
+                        <span class="tooltip" set:html={word.tooltip}></span>
+                      </span>
+                    ))}
+                    <span class="kanji">。</span>
+                  </div>
                 </div>
                 <input type="text" class="translation-input" placeholder="Skriv hva denne setningen betyr på norsk..." />
                 <div class="feedback"></div>
@@ -612,6 +682,94 @@ const categories = [megSelvGenerated, matGenerated, tog, italiaGenerated, hirosh
 
       // Make toggleCategory available globally
       (window as any).toggleCategory = toggleCategory;
+
+      // Text-to-Speech funksjonalitet
+      const synth = window.speechSynthesis;
+      let currentUtterance: SpeechSynthesisUtterance | null = null;
+
+      // Finn japansk stemme (kvinnelig hvis tilgjengelig)
+      function getJapaneseVoice(): SpeechSynthesisVoice | null {
+        const voices = synth.getVoices();
+        // Prøv å finne en kvinnelig japansk stemme først
+        let voice = voices.find(v => v.lang.startsWith('ja') && v.name.includes('Female'));
+        if (!voice) {
+          // Hvis ikke, finn en hvilken som helst japansk stemme
+          voice = voices.find(v => v.lang.startsWith('ja'));
+        }
+        return voice || null;
+      }
+
+      // Funksjon for å spille av tekst
+      function speakText(text: string, button: HTMLElement): void {
+        // Stopp eventuell pågående tale
+        if (synth.speaking) {
+          synth.cancel();
+          document.querySelectorAll('.play-btn.playing').forEach(btn => {
+            btn.classList.remove('playing');
+          });
+        }
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        const voice = getJapaneseVoice();
+
+        if (voice) {
+          utterance.voice = voice;
+        }
+        utterance.lang = 'ja-JP';
+        utterance.rate = 0.85; // Litt langsommere for bedre forståelse
+        utterance.pitch = 1.1; // Litt høyere tone for kvinnelig stemme
+
+        button.classList.add('playing');
+        currentUtterance = utterance;
+
+        utterance.onend = () => {
+          button.classList.remove('playing');
+          currentUtterance = null;
+        };
+
+        utterance.onerror = () => {
+          button.classList.remove('playing');
+          currentUtterance = null;
+          console.error('Tale-syntese feil');
+        };
+
+        synth.speak(utterance);
+      }
+
+      // Last inn stemmer (nødvendig for noen nettlesere)
+      if (synth.onvoiceschanged !== undefined) {
+        synth.onvoiceschanged = getJapaneseVoice;
+      }
+
+      // Legg til event listeners for alle play-knapper
+      document.querySelectorAll('.play-word').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const text = (button as HTMLElement).getAttribute('data-text');
+          if (text) {
+            speakText(text, button as HTMLElement);
+          }
+        });
+      });
+
+      document.querySelectorAll('.play-sentence').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const sentenceBlock = (button as HTMLElement).closest('.sentence-block');
+          if (sentenceBlock) {
+            const words = sentenceBlock.querySelectorAll('.word .kanji');
+            let fullText = '';
+            words.forEach(word => {
+              fullText += (word as HTMLElement).textContent || '';
+            });
+            // Legg til punktum
+            fullText += '。';
+            speakText(fullText, button as HTMLElement);
+          }
+        });
+      });
     </script>
   </body>
 </html>
