@@ -133,6 +133,33 @@ const categories = [megSelv, mat, tog, italia, hiroshima, dagligeRutiner, hjemme
         line-height: 1.2;
       }
 
+      .hide-romaji .romaji {
+        display: none;
+      }
+
+      .settings-panel {
+        background-color: #f8f9fa;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+      }
+
+      .settings-panel label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        color: #2c3e50;
+      }
+
+      .settings-panel input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
       .tooltip {
         visibility: hidden;
         position: absolute;
@@ -255,6 +282,13 @@ const categories = [megSelv, mat, tog, italia, hiroshima, dagligeRutiner, hjemme
   <body>
     <div class="container">
       <h1>日本語の練習 (にほんごのれんしゅう) - Japansk øving</h1>
+
+      <div class="settings-panel">
+        <label>
+          <input type="checkbox" id="showRomajiToggle" />
+          <span>Vis romaji (ローマ字を表示)</span>
+        </label>
+      </div>
 
       <div class="progress-bar">
         <div class="progress-fill" id="progressBar"></div>
@@ -460,6 +494,29 @@ const categories = [megSelv, mat, tog, italia, hiroshima, dagligeRutiner, hjemme
 
       // Initialiser progress bar
       updateProgress();
+
+      // Håndter romaji toggle
+      const showRomajiToggle = document.getElementById("showRomajiToggle") as HTMLInputElement;
+      const container = document.querySelector(".container") as HTMLElement;
+
+      // Last inn brukerens preferanse fra localStorage (default: true = vis romaji)
+      const savedPreference = localStorage.getItem("showRomaji");
+      const shouldShowRomaji = savedPreference === null ? true : savedPreference === "true";
+
+      showRomajiToggle.checked = shouldShowRomaji;
+      if (!shouldShowRomaji) {
+        container.classList.add("hide-romaji");
+      }
+
+      showRomajiToggle.addEventListener("change", () => {
+        if (showRomajiToggle.checked) {
+          container.classList.remove("hide-romaji");
+          localStorage.setItem("showRomaji", "true");
+        } else {
+          container.classList.add("hide-romaji");
+          localStorage.setItem("showRomaji", "false");
+        }
+      });
 
       // Make toggleCategory available globally
       (window as any).toggleCategory = toggleCategory;
