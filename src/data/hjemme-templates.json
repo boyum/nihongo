@@ -29,18 +29,18 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "へや", "kanji": "部屋", "romaji": "heya", "tooltip": "rom"},
-            {"furigana": "まど", "kanji": "窓", "romaji": "mado", "tooltip": "vindu"},
-            {"furigana": "", "kanji": "トイレ", "romaji": "toire", "tooltip": "toalett"}
+            {"furigana": "へや", "kanji": "部屋", "romaji": "heya", "tooltip": "rom", "translations": ["det er NUM rom"]},
+            {"furigana": "まど", "kanji": "窓", "romaji": "mado", "tooltip": "vindu", "translations": ["det er NUM vinduer"]},
+            {"furigana": "", "kanji": "トイレ", "romaji": "toire", "tooltip": "toalett", "translations": ["det er NUM toaletter"]}
           ]
         },
         {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
         {
           "type": "variable",
           "options": [
-            {"furigana": "みっつ", "kanji": "三つ", "romaji": "mittsu", "tooltip": "tre"},
-            {"furigana": "よっつ", "kanji": "四つ", "romaji": "yottsu", "tooltip": "fire"},
-            {"furigana": "いつつ", "kanji": "五つ", "romaji": "itsutsu", "tooltip": "fem"}
+            {"furigana": "みっつ", "kanji": "三つ", "romaji": "mittsu", "tooltip": "tre", "translations": ["det er tre THING"]},
+            {"furigana": "よっつ", "kanji": "四つ", "romaji": "yottsu", "tooltip": "fire", "translations": ["det er fire THING"]},
+            {"furigana": "いつつ", "kanji": "五つ", "romaji": "itsutsu", "tooltip": "fem", "translations": ["det er fem THING"]}
           ]
         },
         {"furigana": "あります", "kanji": "あります", "romaji": "arimasu", "tooltip": "finnes"},
@@ -53,9 +53,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "だいどころ", "kanji": "台所", "romaji": "daidokoro", "tooltip": "kjøkken"},
-            {"furigana": "りびんぐ", "kanji": "リビング", "romaji": "ribingu", "tooltip": "stue"},
-            {"furigana": "しんしつ", "kanji": "寝室", "romaji": "shinshitsu", "tooltip": "soverom"}
+            {"furigana": "だいどころ", "kanji": "台所", "romaji": "daidokoro", "tooltip": "kjøkken", "translations": ["kjøkkenet er romslig", "kjøkkenet er trangt", "kjøkkenet er pent"]},
+            {"furigana": "りびんぐ", "kanji": "リビング", "romaji": "ribingu", "tooltip": "stue", "translations": ["stuen er romslig", "stuen er trang", "stuen er pen"]},
+            {"furigana": "しんしつ", "kanji": "寝室", "romaji": "shinshitsu", "tooltip": "soverom", "translations": ["soverommet er romslig", "soverommet er trangt", "soverommet er pent"]}
           ]
         },
         {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
@@ -76,9 +76,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"},
-            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke"},
-            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "i helgen"}
+            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag", "translations": ["jeg rengjør hver dag", "jeg vasker klær hver dag", "jeg lager mat hver dag"]},
+            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke", "translations": ["jeg rengjør hver uke", "jeg vasker klær hver uke", "jeg lager mat hver uke"]},
+            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "i helgen", "translations": ["jeg rengjør i helgen", "jeg vasker klær i helgen", "jeg lager mat i helgen"]}
           ]
         },
         {
@@ -112,9 +112,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "にわ", "kanji": "庭", "romaji": "niwa", "tooltip": "hage"},
-            {"furigana": "", "kanji": "ベランダ", "romaji": "beranda", "tooltip": "balkong"},
-            {"furigana": "げんかん", "kanji": "玄関", "romaji": "genkan", "tooltip": "entre"}
+            {"furigana": "にわ", "kanji": "庭", "romaji": "niwa", "tooltip": "hage", "translations": ["det er THING i hagen"]},
+            {"furigana": "", "kanji": "ベランダ", "romaji": "beranda", "tooltip": "balkong", "translations": ["det er THING på balkongen"]},
+            {"furigana": "げんかん", "kanji": "玄関", "romaji": "genkan", "tooltip": "entre", "translations": ["det er THING i entreen"]}
           ]
         },
         {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[i]", "isParticle": true},

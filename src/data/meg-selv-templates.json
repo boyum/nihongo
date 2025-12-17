@@ -12,10 +12,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "シンドレ", "romaji": "shindore", "tooltip": "Sindre"},
-            {"furigana": "", "kanji": "アンナ", "romaji": "anna", "tooltip": "Anna"},
-            {"furigana": "", "kanji": "マリア", "romaji": "maria", "tooltip": "Maria"},
-            {"furigana": "", "kanji": "ヨハネス", "romaji": "yohanesu", "tooltip": "Johannes"}
+            {"furigana": "", "kanji": "シンドレ", "romaji": "shindore", "tooltip": "Sindre", "translations": ["jeg heter sindre"]},
+            {"furigana": "", "kanji": "アンナ", "romaji": "anna", "tooltip": "Anna", "translations": ["jeg heter anna"]},
+            {"furigana": "", "kanji": "マリア", "romaji": "maria", "tooltip": "Maria", "translations": ["jeg heter maria"]},
+            {"furigana": "", "kanji": "ヨハネス", "romaji": "yohanesu", "tooltip": "Johannes", "translations": ["jeg heter johannes"]}
           ]
         },
         {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
@@ -30,10 +30,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "ノルウェー", "romaji": "noruwe", "tooltip": "Norge"},
-            {"furigana": "", "kanji": "スウェーデン", "romaji": "suweeden", "tooltip": "Sverige"},
-            {"furigana": "", "kanji": "デンマーク", "romaji": "denmaaku", "tooltip": "Danmark"},
-            {"furigana": "", "kanji": "アメリカ", "romaji": "amerika", "tooltip": "Amerika"}
+            {"furigana": "", "kanji": "ノルウェー", "romaji": "noruwe", "tooltip": "Norge", "translations": ["jeg er norsk"]},
+            {"furigana": "", "kanji": "スウェーデン", "romaji": "suweeden", "tooltip": "Sverige", "translations": ["jeg er svensk"]},
+            {"furigana": "", "kanji": "デンマーク", "romaji": "denmaaku", "tooltip": "Danmark", "translations": ["jeg er dansk"]},
+            {"furigana": "", "kanji": "アメリカ", "romaji": "amerika", "tooltip": "Amerika", "translations": ["jeg er amerikaner"]}
           ]
         },
         {"furigana": "じん", "kanji": "人", "romaji": "jin", "tooltip": "person"},
@@ -49,10 +49,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "にじゅっ", "kanji": "二十", "romaji": "nijuu", "tooltip": "tjue"},
-            {"furigana": "にじゅうご", "kanji": "二十五", "romaji": "nijuugo", "tooltip": "tjuefem"},
-            {"furigana": "さんじゅっ", "kanji": "三十", "romaji": "sanjuu", "tooltip": "tretti"},
-            {"furigana": "さんじゅうご", "kanji": "三十五", "romaji": "sanjuugo", "tooltip": "trettifem"}
+            {"furigana": "にじゅっ", "kanji": "二十", "romaji": "nijuu", "tooltip": "tjue", "translations": ["jeg er tjue år gammel"]},
+            {"furigana": "にじゅうご", "kanji": "二十五", "romaji": "nijuugo", "tooltip": "tjuefem", "translations": ["jeg er tjuefem år gammel"]},
+            {"furigana": "さんじゅっ", "kanji": "三十", "romaji": "sanjuu", "tooltip": "tretti", "translations": ["jeg er tretti år gammel"]},
+            {"furigana": "さんじゅうご", "kanji": "三十五", "romaji": "sanjuugo", "tooltip": "trettifem", "translations": ["jeg er trettifem år gammel"]}
           ]
         },
         {"furigana": "さい", "kanji": "歳", "romaji": "sai", "tooltip": "år"},
@@ -129,10 +129,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "おんがく", "kanji": "音楽", "romaji": "ongaku", "tooltip": "musikk"},
-            {"furigana": "えいが", "kanji": "映画", "romaji": "eiga", "tooltip": "film"},
-            {"furigana": "", "kanji": "アニメ", "romaji": "anime", "tooltip": "anime"},
-            {"furigana": "", "kanji": "スポーツ", "romaji": "supootsu", "tooltip": "sport"}
+            {"furigana": "おんがく", "kanji": "音楽", "romaji": "ongaku", "tooltip": "musikk", "translations": ["jeg liker musikk", "jeg elsker musikk", "jeg liker ikke musikk"]},
+            {"furigana": "えいが", "kanji": "映画", "romaji": "eiga", "tooltip": "film", "translations": ["jeg liker film", "jeg elsker film", "jeg liker ikke film"]},
+            {"furigana": "", "kanji": "アニメ", "romaji": "anime", "tooltip": "anime", "translations": ["jeg liker anime", "jeg elsker anime", "jeg liker ikke anime"]},
+            {"furigana": "", "kanji": "スポーツ", "romaji": "supootsu", "tooltip": "sport", "translations": ["jeg liker sport", "jeg elsker sport", "jeg liker ikke sport"]}
           ]
         },
         {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
@@ -171,10 +171,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "おすろ", "kanji": "オスロ", "romaji": "osuro", "tooltip": "Oslo"},
-            {"furigana": "", "kanji": "ベルゲン", "romaji": "berugen", "tooltip": "Bergen"},
-            {"furigana": "", "kanji": "トロンハイム", "romaji": "toronhaimu", "tooltip": "Trondheim"},
-            {"furigana": "", "kanji": "東京", "romaji": "toukyou", "tooltip": "Tokyo"}
+            {"furigana": "おすろ", "kanji": "オスロ", "romaji": "osuro", "tooltip": "Oslo", "translations": ["jeg bor i oslo", "jeg ble født i oslo", "jeg jobber i oslo"]},
+            {"furigana": "", "kanji": "ベルゲン", "romaji": "berugen", "tooltip": "Bergen", "translations": ["jeg bor i bergen", "jeg ble født i bergen", "jeg jobber i bergen"]},
+            {"furigana": "", "kanji": "トロンハイム", "romaji": "toronhaimu", "tooltip": "Trondheim", "translations": ["jeg bor i trondheim", "jeg ble født i trondheim", "jeg jobber i trondheim"]},
+            {"furigana": "", "kanji": "東京", "romaji": "toukyou", "tooltip": "Tokyo", "translations": ["jeg bor i tokyo", "jeg ble født i tokyo", "jeg jobber i tokyo"]}
           ]
         },
         {"furigana": "に", "kanji": "に", "romaji": "ni", "tooltip": "[i]", "isParticle": true},
@@ -196,9 +196,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen"},
-            {"furigana": "よる", "kanji": "夜", "romaji": "yoru", "tooltip": "kveld"},
-            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "helg"}
+            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen", "translations": ["jeg er en morgenperson", "jeg er energisk om morgenen"]},
+            {"furigana": "よる", "kanji": "夜", "romaji": "yoru", "tooltip": "kveld", "translations": ["jeg er en kveldsperson", "jeg er energisk om kvelden"]},
+            {"furigana": "しゅうまつ", "kanji": "週末", "romaji": "shuumatsu", "tooltip": "helg", "translations": ["jeg er en helgperson", "jeg er energisk i helgen"]}
           ]
         },
         {

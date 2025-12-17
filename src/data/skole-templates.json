@@ -10,10 +10,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "すうがく", "kanji": "数学", "romaji": "suugaku", "tooltip": "matematikk"},
-            {"furigana": "えいご", "kanji": "英語", "romaji": "eigo", "tooltip": "engelsk"},
-            {"furigana": "れきし", "kanji": "歴史", "romaji": "rekishi", "tooltip": "historie"},
-            {"furigana": "りか", "kanji": "理科", "romaji": "rika", "tooltip": "naturfag"}
+            {"furigana": "すうがく", "kanji": "数学", "romaji": "suugaku", "tooltip": "matematikk", "translations": ["matematikk er vanskelig", "matematikk er lett", "matematikk er interessant", "matematikk er kjedelig"]},
+            {"furigana": "えいご", "kanji": "英語", "romaji": "eigo", "tooltip": "engelsk", "translations": ["engelsk er vanskelig", "engelsk er lett", "engelsk er interessant", "engelsk er kjedelig"]},
+            {"furigana": "れきし", "kanji": "歴史", "romaji": "rekishi", "tooltip": "historie", "translations": ["historie er vanskelig", "historie er lett", "historie er interessant", "historie er kjedelig"]},
+            {"furigana": "りか", "kanji": "理科", "romaji": "rika", "tooltip": "naturfag", "translations": ["naturfag er vanskelig", "naturfag er lett", "naturfag er interessant", "naturfag er kjedelig"]}
           ]
         },
         {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
@@ -37,9 +37,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte"},
-            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni"},
-            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti"}
+            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte", "translations": ["timen starter klokken åtte"]},
+            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni", "translations": ["timen starter klokken ni"]},
+            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti", "translations": ["timen starter klokken ti"]}
           ]
         },
         {"furigana": "じ", "kanji": "時", "romaji": "ji", "tooltip": "klokken"},
@@ -58,9 +58,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "にじゅう", "kanji": "二十", "romaji": "nijuu", "tooltip": "tjue"},
-            {"furigana": "さんじゅう", "kanji": "三十", "romaji": "sanjuu", "tooltip": "tretti"},
-            {"furigana": "よんじゅう", "kanji": "四十", "romaji": "yonjuu", "tooltip": "førti"}
+            {"furigana": "にじゅう", "kanji": "二十", "romaji": "nijuu", "tooltip": "tjue", "translations": ["det er tjue elever i klasserommet"]},
+            {"furigana": "さんじゅう", "kanji": "三十", "romaji": "sanjuu", "tooltip": "tretti", "translations": ["det er tretti elever i klasserommet"]},
+            {"furigana": "よんじゅう", "kanji": "四十", "romaji": "yonjuu", "tooltip": "førti", "translations": ["det er førti elever i klasserommet"]}
           ]
         },
         {"furigana": "にん", "kanji": "人", "romaji": "nin", "tooltip": "personer"},

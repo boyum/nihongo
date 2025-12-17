@@ -12,10 +12,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "プログラマー", "romaji": "puroguramaa", "tooltip": "programmerer"},
-            {"furigana": "いしゃ", "kanji": "医者", "romaji": "isha", "tooltip": "lege"},
-            {"furigana": "せんせい", "kanji": "先生", "romaji": "sensei", "tooltip": "lærer"},
-            {"furigana": "かんごし", "kanji": "看護師", "romaji": "kangoshi", "tooltip": "sykepleier"}
+            {"furigana": "", "kanji": "プログラマー", "romaji": "puroguramaa", "tooltip": "programmerer", "translations": ["jeg er programmerer"]},
+            {"furigana": "いしゃ", "kanji": "医者", "romaji": "isha", "tooltip": "lege", "translations": ["jeg er lege"]},
+            {"furigana": "せんせい", "kanji": "先生", "romaji": "sensei", "tooltip": "lærer", "translations": ["jeg er lærer"]},
+            {"furigana": "かんごし", "kanji": "看護師", "romaji": "kangoshi", "tooltip": "sykepleier", "translations": ["jeg er sykepleier"]}
           ]
         },
         {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},
@@ -29,9 +29,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte"},
-            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni"},
-            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti"}
+            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte", "translations": ["jeg jobber åtte timer hver dag"]},
+            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni", "translations": ["jeg jobber ni timer hver dag"]},
+            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti", "translations": ["jeg jobber ti timer hver dag"]}
           ]
         },
         {"furigana": "じかん", "kanji": "時間", "romaji": "jikan", "tooltip": "timer"},
@@ -94,18 +94,18 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "メール", "romaji": "meeru", "tooltip": "e-post"},
-            {"furigana": "でんわ", "kanji": "電話", "romaji": "denwa", "tooltip": "telefon"},
-            {"furigana": "ほうこく", "kanji": "報告", "romaji": "houkoku", "tooltip": "rapport"}
+            {"furigana": "", "kanji": "メール", "romaji": "meeru", "tooltip": "e-post", "translations": ["jeg sender FREQ e-post", "jeg skriver FREQ e-post", "jeg gjør FREQ e-post"]},
+            {"furigana": "でんわ", "kanji": "電話", "romaji": "denwa", "tooltip": "telefon", "translations": ["jeg sender FREQ telefon", "jeg skriver FREQ telefon", "jeg gjør FREQ telefon"]},
+            {"furigana": "ほうこく", "kanji": "報告", "romaji": "houkoku", "tooltip": "rapport", "translations": ["jeg sender FREQ rapport", "jeg skriver FREQ rapport", "jeg gjør FREQ rapport"]}
           ]
         },
         {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
         {
           "type": "variable",
           "options": [
-            {"furigana": "たくさん", "kanji": "沢山", "romaji": "takusan", "tooltip": "mange"},
-            {"furigana": "すこし", "kanji": "少し", "romaji": "sukoshi", "tooltip": "litt"},
-            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"}
+            {"furigana": "たくさん", "kanji": "沢山", "romaji": "takusan", "tooltip": "mange", "translations": ["jeg sender mange THING", "jeg skriver mange THING", "jeg gjør mange THING"]},
+            {"furigana": "すこし", "kanji": "少し", "romaji": "sukoshi", "tooltip": "litt", "translations": ["jeg sender litt THING", "jeg skriver litt THING", "jeg gjør litt THING"]},
+            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag", "translations": ["jeg sender THING hver dag", "jeg skriver THING hver dag", "jeg gjør THING hver dag"]}
           ]
         },
         {
@@ -126,9 +126,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "あした", "kanji": "明日", "romaji": "ashita", "tooltip": "i morgen"},
-            {"furigana": "らいしゅう", "kanji": "来週", "romaji": "raishuu", "tooltip": "neste uke"},
-            {"furigana": "きょう", "kanji": "今日", "romaji": "kyou", "tooltip": "i dag"}
+            {"furigana": "あした", "kanji": "明日", "romaji": "ashita", "tooltip": "i morgen", "translations": ["fristen er i morgen"]},
+            {"furigana": "らいしゅう", "kanji": "来週", "romaji": "raishuu", "tooltip": "neste uke", "translations": ["fristen er neste uke"]},
+            {"furigana": "きょう", "kanji": "今日", "romaji": "kyou", "tooltip": "i dag", "translations": ["fristen er i dag"]}
           ]
         },
         {"furigana": "です", "kanji": "です", "romaji": "desu", "tooltip": "er"},

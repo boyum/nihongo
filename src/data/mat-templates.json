@@ -12,10 +12,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "すし", "romaji": "sushi", "tooltip": "sushi"},
-            {"furigana": "", "kanji": "ラーメン", "romaji": "raamen", "tooltip": "ramen"},
-            {"furigana": "", "kanji": "カレー", "romaji": "karee", "tooltip": "karri"},
-            {"furigana": "", "kanji": "てんぷら", "romaji": "tenpura", "tooltip": "tempura"}
+            {"furigana": "", "kanji": "すし", "romaji": "sushi", "tooltip": "sushi", "translations": ["jeg liker sushi", "jeg elsker sushi", "jeg er veldig glad i sushi", "jeg liker ikke sushi", "jeg misliker sushi"]},
+            {"furigana": "", "kanji": "ラーメン", "romaji": "raamen", "tooltip": "ramen", "translations": ["jeg liker ramen", "jeg elsker ramen", "jeg er veldig glad i ramen", "jeg liker ikke ramen", "jeg misliker ramen"]},
+            {"furigana": "", "kanji": "カレー", "romaji": "karee", "tooltip": "karri", "translations": ["jeg liker karri", "jeg elsker karri", "jeg er veldig glad i karri", "jeg liker ikke karri", "jeg misliker karri"]},
+            {"furigana": "", "kanji": "てんぷら", "romaji": "tenpura", "tooltip": "tempura", "translations": ["jeg liker tempura", "jeg elsker tempura", "jeg er veldig glad i tempura", "jeg liker ikke tempura", "jeg misliker tempura"]}
           ]
         },
         {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
@@ -38,19 +38,19 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag"},
-            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke"},
-            {"furigana": "ときどき", "kanji": "時々", "romaji": "tokidoki", "tooltip": "av og til"},
-            {"furigana": "よく", "kanji": "よく", "romaji": "yoku", "tooltip": "ofte"}
+            {"furigana": "まいにち", "kanji": "毎日", "romaji": "mainichi", "tooltip": "hver dag", "translations": ["jeg spiser FOOD hver dag"]},
+            {"furigana": "まいしゅう", "kanji": "毎週", "romaji": "maishuu", "tooltip": "hver uke", "translations": ["jeg spiser FOOD hver uke"]},
+            {"furigana": "ときどき", "kanji": "時々", "romaji": "tokidoki", "tooltip": "av og til", "translations": ["jeg spiser FOOD av og til"]},
+            {"furigana": "よく", "kanji": "よく", "romaji": "yoku", "tooltip": "ofte", "translations": ["jeg spiser FOOD ofte"]}
           ]
         },
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "ラーメン", "romaji": "raamen", "tooltip": "ramen"},
-            {"furigana": "", "kanji": "すし", "romaji": "sushi", "tooltip": "sushi"},
-            {"furigana": "", "kanji": "うどん", "romaji": "udon", "tooltip": "udon"},
-            {"furigana": "やさい", "kanji": "野菜", "romaji": "yasai", "tooltip": "grønnsaker"}
+            {"furigana": "", "kanji": "ラーメン", "romaji": "raamen", "tooltip": "ramen", "translations": ["jeg spiser ramen FREQ"]},
+            {"furigana": "", "kanji": "すし", "romaji": "sushi", "tooltip": "sushi", "translations": ["jeg spiser sushi FREQ"]},
+            {"furigana": "", "kanji": "うどん", "romaji": "udon", "tooltip": "udon", "translations": ["jeg spiser udon FREQ"]},
+            {"furigana": "やさい", "kanji": "野菜", "romaji": "yasai", "tooltip": "grønnsaker", "translations": ["jeg spiser grønnsaker FREQ"]}
           ]
         },
         {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
@@ -66,18 +66,18 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen"},
-            {"furigana": "ひる", "kanji": "昼", "romaji": "hiru", "tooltip": "lunsj"},
-            {"furigana": "よる", "kanji": "夜", "romaji": "yoru", "tooltip": "kveld"}
+            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen", "translations": ["jeg drikker DRINK om morgenen"]},
+            {"furigana": "ひる", "kanji": "昼", "romaji": "hiru", "tooltip": "lunsj", "translations": ["jeg drikker DRINK om lunsjtid"]},
+            {"furigana": "よる", "kanji": "夜", "romaji": "yoru", "tooltip": "kveld", "translations": ["jeg drikker DRINK om kvelden"]}
           ]
         },
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "コーヒー", "romaji": "koohii", "tooltip": "kaffe"},
-            {"furigana": "", "kanji": "お茶", "romaji": "ocha", "tooltip": "te"},
-            {"furigana": "みず", "kanji": "水", "romaji": "mizu", "tooltip": "vann"},
-            {"furigana": "", "kanji": "ジュース", "romaji": "juusu", "tooltip": "juice"}
+            {"furigana": "", "kanji": "コーヒー", "romaji": "koohii", "tooltip": "kaffe", "translations": ["jeg drikker kaffe om TIME"]},
+            {"furigana": "", "kanji": "お茶", "romaji": "ocha", "tooltip": "te", "translations": ["jeg drikker te om TIME"]},
+            {"furigana": "みず", "kanji": "水", "romaji": "mizu", "tooltip": "vann", "translations": ["jeg drikker vann om TIME"]},
+            {"furigana": "", "kanji": "ジュース", "romaji": "juusu", "tooltip": "juice", "translations": ["jeg drikker juice om TIME"]}
           ]
         },
         {"furigana": "を", "kanji": "を", "romaji": "o", "tooltip": "[objekt-partikkel]", "isParticle": true},
@@ -91,10 +91,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "にほん", "kanji": "日本", "romaji": "nihon", "tooltip": "Japan"},
-            {"furigana": "", "kanji": "イタリア", "romaji": "itaria", "tooltip": "Italia"},
-            {"furigana": "", "kanji": "フランス", "romaji": "furansu", "tooltip": "Frankrike"},
-            {"furigana": "", "kanji": "タイ", "romaji": "tai", "tooltip": "Thailand"}
+            {"furigana": "にほん", "kanji": "日本", "romaji": "nihon", "tooltip": "Japan", "translations": ["japansk mat er deilig", "mat fra japan er god", "japansk mat er sunn", "mat fra japan er sunn", "japansk mat er sterk", "mat fra japan er krydret"]},
+            {"furigana": "", "kanji": "イタリア", "romaji": "itaria", "tooltip": "Italia", "translations": ["italiensk mat er deilig", "mat fra italia er god", "italiensk mat er sunn", "mat fra italia er sunn", "italiensk mat er sterk", "mat fra italia er krydret"]},
+            {"furigana": "", "kanji": "フランス", "romaji": "furansu", "tooltip": "Frankrike", "translations": ["fransk mat er deilig", "mat fra frankrike er god", "fransk mat er sunn", "mat fra frankrike er sunn", "fransk mat er sterk", "mat fra frankrike er krydret"]},
+            {"furigana": "", "kanji": "タイ", "romaji": "tai", "tooltip": "Thailand", "translations": ["thailandsk mat er deilig", "mat fra thailand er god", "thailandsk mat er sunn", "mat fra thailand er sunn", "thailandsk mat er sterk", "mat fra thailand er krydret"]}
           ]
         },
         {"furigana": "の", "kanji": "の", "romaji": "no", "tooltip": "[eiendoms-partikkel]", "isParticle": true},

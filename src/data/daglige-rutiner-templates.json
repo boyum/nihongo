@@ -11,9 +11,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "ろく", "kanji": "六", "romaji": "roku", "tooltip": "seks"},
-            {"furigana": "しち", "kanji": "七", "romaji": "shichi", "tooltip": "syv"},
-            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte"}
+            {"furigana": "ろく", "kanji": "六", "romaji": "roku", "tooltip": "seks", "translations": ["jeg står opp klokken seks hver morgen"]},
+            {"furigana": "しち", "kanji": "七", "romaji": "shichi", "tooltip": "syv", "translations": ["jeg står opp klokken syv hver morgen"]},
+            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte", "translations": ["jeg står opp klokken åtte hver morgen"]}
           ]
         },
         {"furigana": "じ", "kanji": "時", "romaji": "ji", "tooltip": "klokken"},
@@ -53,9 +53,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen"},
-            {"furigana": "ひる", "kanji": "昼", "romaji": "hiru", "tooltip": "lunsj"},
-            {"furigana": "ばん", "kanji": "晩", "romaji": "ban", "tooltip": "kveld"}
+            {"furigana": "あさ", "kanji": "朝", "romaji": "asa", "tooltip": "morgen", "translations": ["jeg spiser frokost", "jeg lager frokost", "jeg kjøper frokost"]},
+            {"furigana": "ひる", "kanji": "昼", "romaji": "hiru", "tooltip": "lunsj", "translations": ["jeg spiser lunsj", "jeg lager lunsj", "jeg kjøper lunsj"]},
+            {"furigana": "ばん", "kanji": "晩", "romaji": "ban", "tooltip": "kveld", "translations": ["jeg spiser middag", "jeg lager middag", "jeg kjøper middag"]}
           ]
         },
         {"furigana": "ごはん", "kanji": "ご飯", "romaji": "gohan", "tooltip": "måltid"},
@@ -76,9 +76,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "しち", "kanji": "七", "romaji": "shichi", "tooltip": "syv"},
-            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte"},
-            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni"}
+            {"furigana": "しち", "kanji": "七", "romaji": "shichi", "tooltip": "syv", "translations": ["jeg går hjemmefra klokken syv"]},
+            {"furigana": "はち", "kanji": "八", "romaji": "hachi", "tooltip": "åtte", "translations": ["jeg går hjemmefra klokken åtte"]},
+            {"furigana": "く", "kanji": "九", "romaji": "ku", "tooltip": "ni", "translations": ["jeg går hjemmefra klokken ni"]}
           ]
         },
         {"furigana": "じ", "kanji": "時", "romaji": "ji", "tooltip": "klokken"},
@@ -95,10 +95,10 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog"},
-            {"furigana": "", "kanji": "バス", "romaji": "basu", "tooltip": "buss"},
-            {"furigana": "じてんしゃ", "kanji": "自転車", "romaji": "jitensha", "tooltip": "sykkel"},
-            {"furigana": "くるま", "kanji": "車", "romaji": "kuruma", "tooltip": "bil"}
+            {"furigana": "でんしゃ", "kanji": "電車", "romaji": "densha", "tooltip": "tog", "translations": ["jeg pendler med tog", "jeg tar tog til skolen", "jeg tar tog til jobb"]},
+            {"furigana": "", "kanji": "バス", "romaji": "basu", "tooltip": "buss", "translations": ["jeg pendler med buss", "jeg tar buss til skolen", "jeg tar buss til jobb"]},
+            {"furigana": "じてんしゃ", "kanji": "自転車", "romaji": "jitensha", "tooltip": "sykkel", "translations": ["jeg pendler med sykkel", "jeg tar sykkel til skolen", "jeg tar sykkel til jobb"]},
+            {"furigana": "くるま", "kanji": "車", "romaji": "kuruma", "tooltip": "bil", "translations": ["jeg pendler med bil", "jeg tar bil til skolen", "jeg tar bil til jobb"]}
           ]
         },
         {"furigana": "で", "kanji": "で", "romaji": "de", "tooltip": "[med]", "isParticle": true},
@@ -133,9 +133,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti"},
-            {"furigana": "じゅういち", "kanji": "十一", "romaji": "juuichi", "tooltip": "elleve"},
-            {"furigana": "じゅうに", "kanji": "十二", "romaji": "juuni", "tooltip": "tolv"}
+            {"furigana": "じゅう", "kanji": "十", "romaji": "juu", "tooltip": "ti", "translations": ["jeg legger meg klokken ti"]},
+            {"furigana": "じゅういち", "kanji": "十一", "romaji": "juuichi", "tooltip": "elleve", "translations": ["jeg legger meg klokken elleve"]},
+            {"furigana": "じゅうに", "kanji": "十二", "romaji": "juuni", "tooltip": "tolv", "translations": ["jeg legger meg klokken tolv"]}
           ]
         },
         {"furigana": "じ", "kanji": "時", "romaji": "ji", "tooltip": "klokken"},

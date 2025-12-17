@@ -44,19 +44,19 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "ピザ", "romaji": "piza", "tooltip": "pizza"},
-            {"furigana": "", "kanji": "パスタ", "romaji": "pasuta", "tooltip": "pasta"},
-            {"furigana": "", "kanji": "ジェラート", "romaji": "jeraato", "tooltip": "gelato"},
-            {"furigana": "", "kanji": "ティラミス", "romaji": "tiramisu", "tooltip": "tiramisu"}
+            {"furigana": "", "kanji": "ピザ", "romaji": "piza", "tooltip": "pizza", "translations": ["pizza var veldig god", "pizza var veldig deilig", "pizza er veldig god", "pizza er veldig deilig", "jeg liker pizza veldig godt"]},
+            {"furigana": "", "kanji": "パスタ", "romaji": "pasuta", "tooltip": "pasta", "translations": ["pasta var veldig god", "pasta var veldig deilig", "pasta er veldig god", "pasta er veldig deilig", "jeg liker pasta veldig godt"]},
+            {"furigana": "", "kanji": "ジェラート", "romaji": "jeraato", "tooltip": "gelato", "translations": ["gelato var veldig god", "gelato var veldig deilig", "gelato er veldig god", "gelato er veldig deilig", "jeg liker gelato veldig godt"]},
+            {"furigana": "", "kanji": "ティラミス", "romaji": "tiramisu", "tooltip": "tiramisu", "translations": ["tiramisu var veldig god", "tiramisu var veldig deilig", "tiramisu er veldig god", "tiramisu er veldig deilig", "jeg liker tiramisu veldig godt"]}
           ]
         },
         {"furigana": "が", "kanji": "が", "romaji": "ga", "tooltip": "[subjekt-partikkel]", "isParticle": true},
         {
           "type": "variable",
           "options": [
-            {"furigana": "とても", "kanji": "とても", "romaji": "totemo", "tooltip": "veldig"},
-            {"furigana": "すごく", "kanji": "凄く", "romaji": "sugoku", "tooltip": "utrolig"},
-            {"furigana": "ほんとうに", "kanji": "本当に", "romaji": "hontouni", "tooltip": "virkelig"}
+            {"furigana": "とても", "kanji": "とても", "romaji": "totemo", "tooltip": "veldig", "translations": ["FOOD var veldig god", "FOOD var veldig deilig", "FOOD er veldig god", "FOOD er veldig deilig", "jeg liker FOOD veldig godt"]},
+            {"furigana": "すごく", "kanji": "凄く", "romaji": "sugoku", "tooltip": "utrolig", "translations": ["FOOD var utrolig god", "FOOD var utrolig deilig", "FOOD er utrolig god", "FOOD er utrolig deilig", "jeg liker FOOD utrolig godt"]},
+            {"furigana": "ほんとうに", "kanji": "本当に", "romaji": "hontouni", "tooltip": "virkelig", "translations": ["FOOD var virkelig god", "FOOD var virkelig deilig", "FOOD er virkelig god", "FOOD er virkelig deilig", "jeg liker FOOD virkelig godt"]}
           ]
         },
         {
@@ -93,9 +93,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "", "kanji": "ローマ", "romaji": "rooma", "tooltip": "Roma"},
-            {"furigana": "", "kanji": "フィレンツェ", "romaji": "firentse", "tooltip": "Firenze"},
-            {"furigana": "", "kanji": "ミラノ", "romaji": "mirano", "tooltip": "Milano"}
+            {"furigana": "", "kanji": "ローマ", "romaji": "rooma", "tooltip": "Roma", "translations": ["roma er en vakker by", "roma er en livlig by", "roma er en berømt by"]},
+            {"furigana": "", "kanji": "フィレンツェ", "romaji": "firentse", "tooltip": "Firenze", "translations": ["firenze er en vakker by", "firenze er en livlig by", "firenze er en berømt by"]},
+            {"furigana": "", "kanji": "ミラノ", "romaji": "mirano", "tooltip": "Milano", "translations": ["milano er en vakker by", "milano er en livlig by", "milano er en berømt by"]}
           ]
         },
         {"furigana": "は", "kanji": "は", "romaji": "wa", "tooltip": "[emne-partikkel]", "isParticle": true},
