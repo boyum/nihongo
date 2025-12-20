@@ -95,9 +95,9 @@
         {
           "type": "variable",
           "options": [
-            {"furigana": "べんきょう", "kanji": "勉強", "romaji": "benkyou", "tooltip": "studere", "extra": [{"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"}, {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg studerer LANGUAGE"]},
-            {"furigana": "ならって", "kanji": "習って", "romaji": "naratte", "tooltip": "lærer", "extra": [{"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg lærer LANGUAGE"]},
-            {"furigana": "はなします", "kanji": "話します", "romaji": "hanashimasu", "tooltip": "snakker", "translations": ["jeg snakker LANGUAGE"]}
+            {"furigana": "べんきょう", "kanji": "勉強", "romaji": "benkyou", "tooltip": "studere", "extra": [{"furigana": "して", "kanji": "して", "romaji": "shite", "tooltip": "gjør"}, {"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg studerer japansk", "jeg studerer engelsk", "jeg studerer spansk", "jeg studerer fransk"]},
+            {"furigana": "ならって", "kanji": "習って", "romaji": "naratte", "tooltip": "lærer", "extra": [{"furigana": "います", "kanji": "います", "romaji": "imasu", "tooltip": "er"}], "translations": ["jeg lærer japansk", "jeg lærer engelsk", "jeg lærer spansk", "jeg lærer fransk"]},
+            {"furigana": "はなします", "kanji": "話します", "romaji": "hanashimasu", "tooltip": "snakker", "translations": ["jeg snakker japansk", "jeg snakker engelsk", "jeg snakker spansk", "jeg snakker fransk"]}
           ]
         }
       ]
